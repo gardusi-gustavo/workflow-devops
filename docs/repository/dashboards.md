@@ -57,4 +57,4 @@ opened locally.
 
 ## 🔗 Related
 
-- `dashboards/devops/observability` — live collection and Grafana
+- `gardusi-gustavo/workflow-devops/src/observability` — live collection and Grafana

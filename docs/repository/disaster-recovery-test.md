@@ -75,8 +75,8 @@ container and a separate data directory.
 6. Verify tags and commits.
 
    ```bash
-   git --git-dir=/tmp/gitea-dr-test/data/git/repositories/dashboards/devops.git tag --list
-   git --git-dir=/tmp/gitea-dr-test/data/git/repositories/dashboards/devops.git log --oneline -3
+   git --git-dir=/tmp/gitea-dr-test/data/git/repositories/gardusi-gustavo/workflow-devops.git tag --list
+   git --git-dir=/tmp/gitea-dr-test/data/git/repositories/gardusi-gustavo/workflow-devops.git log --oneline -3
    ```
 
 7. Verify issues and pull requests.
@@ -99,7 +99,7 @@ container and a separate data directory.
 9. Verify Git transport.
 
    ```bash
-   GIT_TERMINAL_PROMPT=0 git ls-remote http://127.0.0.1:3002/dashboards/devops.git
+   GIT_TERMINAL_PROMPT=0 git ls-remote http://127.0.0.1:3002/gardusi-gustavo/workflow-devops.git
    ```
 
 10. Record the result below, then remove the test instance.

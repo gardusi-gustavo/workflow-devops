@@ -36,15 +36,18 @@ Gitea dump remains the cold fallback until that export is verified.
 ## Create
 
 ```bash
+# The scripts live in package-sh.
+BIN=~/repos/gardusi-gustavo/package-sh/infra/scripts/backup
+
 # One repository from a local bare clone
-bundle-backup.sh gardusi-gustavo/package-json \
+"$BIN/bundle-backup.sh" gardusi-gustavo/package-json \
   --source /srv/gitea/data/git/repositories/gardusi-gustavo/package-json.git
 
 # One repository from GitHub
-bundle-backup.sh gardusi-gustavo/package-json
+"$BIN/bundle-backup.sh" gardusi-gustavo/package-json
 
 # Encrypted private repository
-bundle-backup.sh gardusi-gustavo/private \
+"$BIN/bundle-backup.sh" gardusi-gustavo/private \
   --source /srv/gitea/data/git/repositories/human/private.git \
   --encrypt --passphrase-file /srv/backup/secrets/backup.pass
 ```
@@ -63,14 +66,16 @@ profile → contracts → tooling → languages → data → workflows → dashb
 Run all, or a test subset:
 
 ```bash
-bundle-all.sh
-bundle-all.sh --dry-run --only gardusi-gustavo/gardusi-gustavo
+BIN=~/repos/gardusi-gustavo/package-sh/infra/scripts/backup
+ORDER=~/repos/gardusi-gustavo/workflow-devops/infra/config/bundle-order.json
+"$BIN/bundle-all.sh" --order "$ORDER"
+"$BIN/bundle-all.sh" --order "$ORDER" --dry-run --only gardusi-gustavo/gardusi-gustavo
 ```
 
 ## Verify
 
 ```bash
-bundle-verify.sh /srv/backup/git-bundles
+~/repos/gardusi-gustavo/package-sh/infra/scripts/backup/bundle-verify.sh /srv/backup/git-bundles
 ```
 
 Checks every `SHA256SUMS`, then runs `git bundle verify` for plain bundles. If a
@@ -80,7 +85,7 @@ file and verified.
 ## Restore drill
 
 ```bash
-bundle-restore-test.sh gardusi-gustavo/package-json \
+~/repos/gardusi-gustavo/package-sh/infra/scripts/backup/bundle-restore-test.sh gardusi-gustavo/package-json \
   --root /srv/backup/git-bundles \
   --out /tmp/restore-test \
   --status-file /srv/backup/status/bundle-restore-latest.json
@@ -112,4 +117,4 @@ destination. The copy is checksum-verified after `rsync`.
 
 The generic bundle primitives live in `package-sh` under
 `infra/scripts/backup/`. `workflow-devops` owns the order file and backup policy.
-Run `bundle-all.sh --order infra/config/bundle-order.json`.
+Run `package-sh/infra/scripts/backup/bundle-all.sh --order infra/config/bundle-order.json`.

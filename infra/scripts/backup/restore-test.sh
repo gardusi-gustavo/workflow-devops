@@ -167,7 +167,7 @@ integrity="$(jq -r '.integrity // "unknown"' <<<"$counts")"
 [[ "$integrity" == "ok" ]] || fail "SQLite integrity is $integrity"
 (( repo_count > 0 )) || fail "restored database has no repositories"
 
-if GIT_TERMINAL_PROMPT=0 git ls-remote "http://127.0.0.1:$PORT/dashboards/devops.git" >/dev/null 2>&1; then
+if GIT_TERMINAL_PROMPT=0 git ls-remote "http://127.0.0.1:$PORT/gardusi-gustavo/workflow-devops.git" >/dev/null 2>&1; then
   git_ok="true"
 else
   fail "git ls-remote failed"
