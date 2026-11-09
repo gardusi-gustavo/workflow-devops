@@ -194,6 +194,6 @@
     ]
   },
   "dependencies": {
-    "gardusi-gustavo/package-sh": "v0.7.0"
+    "gardusi-gustavo/package-sh": "v0.7.1"
   }
 }
