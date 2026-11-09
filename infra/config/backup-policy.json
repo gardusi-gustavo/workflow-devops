@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "mode": "gitea-dump",
+  "primary_dir": "/srv/backup/gitea-dumps",
+  "password_file": "/srv/backup/secrets/backup.pass",
+  "data_dir": "/srv/gitea/data",
+  "gitea_uid": 1003,
+  "gitea_gid": 1003,
+  "quiesce": true,
+  "encrypt": true,
+  "name_template": "gitea-%Y%m%dT%H%M%SZ",
+  "retention": {
+    "max_bytes": 5368709120,
+    "reserve_bytes": 536870912,
+    "minimum_valid_archives": 5,
+    "prune": "oldest_first",
+    "preserve_newest_validated": true
+  },
+  "lock_file": "/run/lock/gitea-backup.lock",
+  "mirror_mode": "required",
+  "status_dir": "/srv/backup/status",
+  "max_age_hours": 27,
+  "device_config": "/srv/gitea/tooling/offline-devices.json",
+  "vault_backup_subdir": "0-library/backup/gitea-dumps"
+}

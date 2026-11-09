@@ -1,0 +1,39 @@
+{
+  "id": "vault.scan",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 300,
+  "input_object_schema": "schemas/vault/objects.schema.json#/$defs/scanRequest",
+  "output_object_schema": "schemas/vault/collections.schema.json#/$defs/itemInputList",
+  "transition": null,
+  "idempotency": "store_key + size_bytes + mtime",
+  "side_effects": [
+    "store.read",
+    "state.read"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run vault.scan --root . --json",
+  "preconditions": [
+    {
+      "check": "path_exists",
+      "path": "store_root"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "all_items_have_id"
+    }
+  ],
+  "failure_classes": [
+    "store_unreadable",
+    "permission_denied"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

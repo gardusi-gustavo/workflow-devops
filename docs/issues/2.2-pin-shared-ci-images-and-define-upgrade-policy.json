@@ -1,0 +1,27 @@
+{
+  "rank": "2.2",
+  "title": "Pin shared CI images and define upgrade policy",
+  "context": "Replace the mutable `docker.io/gardusi-gustavo/ci:1` dependency with an explicit version",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Pin shared CI images and define upgrade policy",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "The policy is written and linked from the images docs.",
+      "Every consumer CI image uses the chosen reference.",
+      "The publish workflow records the digest.",
+      "An upgrade requires a deliberate change and passes CI.",
+      "No consumer silently follows a mutable tag.",
+      "Choose immutable tag vs digest.",
+      "Update consumers.",
+      "Add digest output/verification.",
+      "Document the upgrade checklist.",
+      "A changed shared image does not alter consumers until they update.",
+      "Image publish and verification pass."
+    ]
+  },
+  "attempts": []
+}

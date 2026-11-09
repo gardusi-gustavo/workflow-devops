@@ -1,0 +1,24 @@
+{
+  "rank": "1.12",
+  "title": "Add backup tooling install and drift check",
+  "context": "Install the backup tooling from the repository and detect drift between `/srv/backup/tooling` and `ops/workflows`.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add backup tooling install and drift check",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`install.sh` copies `infra/scripts/backup` to `/srv/backup/tooling/backup`.",
+      "It renders `/srv/backup/targets.json` from `infra/config/backup-targets.json`.",
+      "`--check` reports drift without writing.",
+      "CI or a timer runs the check.",
+      "A missing or stale file fails the check.",
+      "behavior implemented",
+      "validation command documented",
+      "runbook updated"
+    ]
+  },
+  "attempts": []
+}

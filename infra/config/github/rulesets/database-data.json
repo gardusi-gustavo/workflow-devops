@@ -1,0 +1,26 @@
+{
+  "name": "database-data-branches",
+  "target": "branch",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "include": [
+        "refs/heads/data/*"
+      ],
+      "exclude": []
+    }
+  },
+  "rules": [
+    {
+      "type": "non_fast_forward"
+    },
+    {
+      "type": "deletion",
+      "parameters": {
+        "allowed_actors": [
+          "RepositoryAdmin"
+        ]
+      }
+    }
+  ]
+}

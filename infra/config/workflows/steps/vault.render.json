@@ -1,0 +1,38 @@
+{
+  "id": "vault.render",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 120,
+  "input_object_schema": "schemas/vault/objects.schema.json#/$defs/reconcileReport",
+  "output_object_schema": "schemas/vault/objects.schema.json#/$defs/runSummary",
+  "transition": null,
+  "idempotency": "run_id + state_digest",
+  "side_effects": [
+    "state.read",
+    "docs.write"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run vault.render --root . --json",
+  "postconditions": [
+    {
+      "check": "docs_written"
+    }
+  ],
+  "failure_classes": [
+    "io_error"
+  ],
+  "retry": {
+    "max_attempts": 1,
+    "on": [
+      "transient"
+    ],
+    "backoff": {
+      "strategy": "fixed",
+      "initial_seconds": 5
+    }
+  }
+}

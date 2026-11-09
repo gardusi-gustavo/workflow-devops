@@ -1,0 +1,23 @@
+{
+  "rank": "1.4",
+  "title": "Rebuild the microSD vault layout and backup path",
+  "context": "Rebuild the microSD vault layout and move the Gitea backup under `0-library/backups`.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Rebuild the microSD vault layout and backup path",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`backup-policy.json` points at `0-library/backups`.",
+      "`make.sh` writes and verifies the new path.",
+      "`backup-status.sh` reports the new path.",
+      "`microsd-state.sh` reports `0-library` caps and usage.",
+      "Catalog collector no longer writes to Downloads.",
+      "Porn is excluded from catalog and mirror.",
+      "Old `/mnt/microsd/backup` is removed only after verification."
+    ]
+  },
+  "attempts": []
+}

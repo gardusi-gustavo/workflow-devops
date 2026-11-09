@@ -1,0 +1,25 @@
+{
+  "rank": "1.2",
+  "title": "Store rclone tokens outside the repository",
+  "context": "Document and enforce where rclone credentials live, how they are protected, and how they are rotated.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Store rclone tokens outside the repository",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`rclone.conf` is mode 600 and outside Git.",
+      "The backup archive excludes rclone configuration.",
+      "A secret scan checks for token-shaped strings in tracked files.",
+      "Rotation steps are documented.",
+      "A lost-token recovery path is documented.",
+      "The runbook names the owner of each remote.",
+      "behavior implemented",
+      "validation command documented",
+      "runbook updated"
+    ]
+  },
+  "attempts": []
+}

@@ -1,0 +1,26 @@
+{
+  "rank": "1.28",
+  "title": "External large assets",
+  "context": "<!-- docs-issue:01a16f9d-66d0-709c-9358-661b9ce39dcc -->",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "<!-- docs-issue:01a16f9d-66d0-709c-9358-661b9ce39dcc -->",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "files above the agreed threshold are excluded from Git repositories",
+      "the external store is encrypted and backed up separately",
+      "each referenced file has a checksum and restore instructions",
+      "tag archives contain the manifest, not the blob",
+      "missing external assets are reported during review",
+      "Confirm the scope and constraints.",
+      "Complete the acceptance criteria.",
+      "Record decisions and evidence in this file.",
+      "`validate-repo.sh` passes",
+      "`validate-issues.sh` passes"
+    ]
+  },
+  "attempts": []
+}

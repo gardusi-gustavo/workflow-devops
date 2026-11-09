@@ -1,0 +1,51 @@
+{
+  "id": "vault.cleanup",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 600,
+  "input_object_schema": "schemas/vault/collections.schema.json#/$defs/itemPublishedList",
+  "output_object_schema": "schemas/vault/collections.schema.json#/$defs/itemPublishedList",
+  "transition": null,
+  "idempotency": "item_id + sha256",
+  "side_effects": [
+    "card.read",
+    "store.write",
+    "state.write",
+    "event.append"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run vault.cleanup --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "items",
+    "concurrency": 2
+  },
+  "preconditions": [
+    {
+      "check": "card_present"
+    },
+    {
+      "check": "hash_equal"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "store_absent"
+    },
+    {
+      "check": "card_present"
+    }
+  ],
+  "failure_classes": [
+    "hash_mismatch",
+    "io_error"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

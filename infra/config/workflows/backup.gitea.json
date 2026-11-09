@@ -1,0 +1,39 @@
+{
+  "id": "backup.gitea",
+  "version": "1.0.0",
+  "title": "Gitea dump backup",
+  "trigger": {
+    "schedule": "0 2 * * *",
+    "manual": true
+  },
+  "steps": [
+    "backup.lock@1.0.0",
+    "backup.preflight@1.0.0",
+    "backup.quiesce@1.0.0",
+    "backup.dump@1.0.0",
+    "backup.validate@1.0.0",
+    "backup.manifest@1.0.0",
+    "backup.archive@1.0.0",
+    "backup.test@1.0.0",
+    "backup.copy@1.0.0",
+    "backup.verify_copy@1.0.0",
+    "backup.publish_copy@1.0.0",
+    "backup.reconcile@1.0.0",
+    "backup.prune@1.0.0"
+  ],
+  "finally": [
+    "backup.status@1.0.0",
+    "backup.resume@1.0.0",
+    "backup.unlock@1.0.0"
+  ],
+  "limits": {
+    "runtime_minutes": 60,
+    "max_items": 1,
+    "stop_on_item_failure": true,
+    "writes": [
+      "files",
+      "service",
+      "status"
+    ]
+  }
+}

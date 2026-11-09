@@ -1,0 +1,39 @@
+{
+  "id": "backup.verify_copy",
+  "version": "1.0.0",
+  "kind": "verify",
+  "timeout_seconds": 600,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/backupCopy",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupCopy",
+  "transition": null,
+  "idempotency": "archive_sha256 + destination",
+  "side_effects": [
+    "file.read"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.verify_copy --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "copies",
+    "concurrency": 4
+  },
+  "postconditions": [
+    {
+      "check": "sha256_match"
+    },
+    {
+      "check": "archive_tested"
+    }
+  ],
+  "failure_classes": [
+    "checksum_mismatch"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

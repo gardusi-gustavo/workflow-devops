@@ -1,0 +1,31 @@
+{
+  "id": "backup.unlock",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 30,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/lockHandle",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/lockHandle",
+  "transition": null,
+  "idempotency": "lock_file + run_id",
+  "side_effects": [
+    "lock.release"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.unlock --root . --json",
+  "postconditions": [
+    {
+      "check": "lock_released"
+    }
+  ],
+  "failure_classes": [
+    "lock_release_failed"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

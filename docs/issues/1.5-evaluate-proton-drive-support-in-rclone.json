@@ -1,0 +1,25 @@
+{
+  "rank": "1.5",
+  "title": "Evaluate Proton Drive support in rclone",
+  "context": "Determine whether Proton Drive can be used as an rclone target for the encrypted archive.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Evaluate Proton Drive support in rclone",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "Confirm the installed rclone version supports Proton Drive.",
+      "Document the authentication method and 2FA implications.",
+      "Test upload, listing, checksum, and download.",
+      "Record any size or rate limits.",
+      "Decide: supported, experimental, or not supported.",
+      "If supported, add a dedicated provider issue.",
+      "decision recorded",
+      "test evidence recorded",
+      "follow-up issue created if supported"
+    ]
+  },
+  "attempts": []
+}

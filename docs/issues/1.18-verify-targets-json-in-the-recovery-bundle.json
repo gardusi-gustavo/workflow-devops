@@ -1,0 +1,20 @@
+{
+  "rank": "1.18",
+  "title": "Verify targets.json in the recovery bundle",
+  "context": "Ensure every Gitea recovery bundle contains `tooling/targets.json` and that the backup handoff checks it.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Verify targets.json in the recovery bundle",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`gitea/tooling/targets.json` exists on both targets.",
+      "`verify-card.sh` checks for it.",
+      "The handoff checklist includes the file.",
+      "A missing file fails verification."
+    ]
+  },
+  "attempts": []
+}

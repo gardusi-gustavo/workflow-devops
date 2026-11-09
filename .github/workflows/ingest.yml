@@ -1,0 +1,122 @@
+name: ingest
+on:
+  workflow_call:
+    inputs:
+      domain:
+        type: string
+        required: true
+      database_repository:
+        type: string
+        default: gardusi-gustavo/database
+      max_days:
+        type: number
+        default: 7
+      max_files:
+        type: number
+        default: 500
+      max_bytes:
+        type: number
+        default: 52428800
+    secrets:
+      APP_ID:
+        required: false
+      APP_PRIVATE_KEY:
+        required: false
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: App token
+        id: app
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: database
+      - name: Checkout workflow repository
+        uses: actions/checkout@v4
+        with:
+          path: source
+      - name: Checkout database
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ inputs.database_repository }}
+          token: ${{ steps.app.outputs.token }}
+          path: database
+          fetch-depth: 0
+      - name: Build dataset
+        working-directory: source
+        env:
+          DOMAIN: ${{ inputs.domain }}
+        run: |
+          day="$(date -u +%F)"
+          bash infra/scripts/ingest.sh --date "$day" --output "$RUNNER_TEMP/dataset.json"
+      - name: Update rolling branch
+        working-directory: database
+        env:
+          DOMAIN: ${{ inputs.domain }}
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          set -euo pipefail
+          day="$(date -u +%F)"
+          branch="data/$DOMAIN"
+          git config user.name "gardusi-gustavo-app[bot]"
+          git config user.email "gardusi-gustavo-app[bot]@users.noreply.github.com"
+          git fetch origin
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            git checkout -B "$branch" "origin/$branch"
+            git merge --no-edit origin/main
+          else
+            git checkout -B "$branch" origin/main
+          fi
+          mkdir -p "data/$DOMAIN"
+          cp "$RUNNER_TEMP/dataset.json" "data/$DOMAIN/$day.json"
+          git add "data/$DOMAIN/$day.json"
+          if git diff --cached --quiet; then
+            echo "no data change"
+            exit 0
+          fi
+          git commit -m "data($DOMAIN): $day"
+          git push origin "$branch"
+      - name: Open or update PR
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          DB: ${{ inputs.database_repository }}
+          DOMAIN: ${{ inputs.domain }}
+          MAX_DAYS: ${{ inputs.max_days }}
+          MAX_FILES: ${{ inputs.max_files }}
+          MAX_BYTES: ${{ inputs.max_bytes }}
+        run: |
+          set -euo pipefail
+          branch="data/$DOMAIN"
+          existing="$(gh pr list --repo "$DB" --head "$branch" --state open --json number,createdAt,changedFiles,additions --jq '.[0] // empty')"
+          body="Rolling ingestion for $DOMAIN.
+
+          - One open PR per domain
+          - Human approval required
+          - Squash merge only
+          - Cap: ${MAX_DAYS} days, ${MAX_FILES} files, ${MAX_BYTES} bytes"
+
+          if [[ -z "$existing" ]]; then
+            gh pr create --repo "$DB" --base main --head "$branch" \
+              --title "data($DOMAIN): rolling ingestion" --body "$body"
+            exit 0
+          fi
+
+          number="$(jq -r .number <<<"$existing")"
+          created="$(jq -r .createdAt <<<"$existing")"
+          files="$(jq -r .changedFiles <<<"$existing")"
+          bytes="$(jq -r .additions <<<"$existing")"
+          age_days=$(( ( $(date -u +%s) - $(date -u -d "$created" +%s) ) / 86400 ))
+          if (( age_days > MAX_DAYS || files > MAX_FILES || bytes > MAX_BYTES )); then
+            gh pr comment "$number" --repo "$DB" --body "Ingestion cap reached: age=${age_days}d files=${files} bytes=${bytes}. Stop ingestion and merge or reset."
+            exit 1
+          fi
+          gh pr edit "$number" --repo "$DB" --body "$body"

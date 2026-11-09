@@ -1,0 +1,31 @@
+{
+  "rank": "1.19",
+  "title": "Provision release tokens for every package registry",
+  "context": "Create scoped release credentials for every package registry, store them outside",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Provision release tokens for every package registry",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "Every registry token exists.",
+      "Tokens are scoped to publish only.",
+      "No token appears in logs, PRs, or the repository.",
+      "Release workflows receive the token.",
+      "A dry run succeeds where supported.",
+      "Rotation is documented.",
+      "Confirm account access through `#168`.",
+      "Create tokens.",
+      "Store them.",
+      "Wire the workflows.",
+      "Run the dry run.",
+      "Record rotation.",
+      "A publish dry run authenticates.",
+      "A non-release job has no token.",
+      "A rotated token works."
+    ]
+  },
+  "attempts": []
+}

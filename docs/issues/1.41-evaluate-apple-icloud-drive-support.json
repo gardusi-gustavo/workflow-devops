@@ -1,0 +1,25 @@
+{
+  "rank": "1.41",
+  "title": "Evaluate Apple iCloud Drive support",
+  "context": "Determine whether iCloud Drive can be a practical Linux upload target.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Evaluate Apple iCloud Drive support",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "Confirm whether rclone has a usable iCloud Drive backend.",
+      "Document the authentication and 2FA constraints.",
+      "Test upload, listing, checksum, and download if a supported path exists.",
+      "Record the operational cost of a macOS host, if required.",
+      "Decide: supported, manual web upload, or not supported.",
+      "If supported, add a dedicated provider issue.",
+      "decision recorded",
+      "limitations documented",
+      "follow-up issue created if supported"
+    ]
+  },
+  "attempts": []
+}

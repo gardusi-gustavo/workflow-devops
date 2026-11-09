@@ -1,0 +1,20 @@
+{
+  "rank": "1.05",
+  "title": "Make workflow-devops self-contained",
+  "context": "Complete the repository self-containment checklist after the devops split.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Complete the repository self-containment checklist after the devops split.",
+    "expected_outcome": "All durable workflow-devops data is inside the repository; external dependencies are documented.",
+    "acceptance_criteria": [
+      "docs/repository/self-contained.md matches the actual state",
+      "All open agent work is in docs/issues/",
+      "External-only data is classified",
+      "Backup and restore references are current"
+    ]
+  },
+  "attempts": []
+}

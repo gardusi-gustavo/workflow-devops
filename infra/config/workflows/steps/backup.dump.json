@@ -1,0 +1,39 @@
+{
+  "id": "backup.dump",
+  "version": "1.0.0",
+  "kind": "transform",
+  "timeout_seconds": 1800,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/dumpRequest",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupDump",
+  "transition": null,
+  "idempotency": "run_id + data_dir",
+  "side_effects": [
+    "service.read",
+    "dump.write"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "medium",
+    "network": false
+  },
+  "command": "sb run backup.dump --root . --json",
+  "preconditions": [
+    {
+      "check": "service_state",
+      "value": "stopped"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "dump_complete"
+    }
+  ],
+  "failure_classes": [
+    "dump_failed",
+    "no_space"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

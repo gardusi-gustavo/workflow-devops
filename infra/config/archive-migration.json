@@ -1,0 +1,666 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-11-09T19:39:20Z",
+  "local_cold_storage": [
+    "private/wiki.legacy",
+    "private/wiki.wiki",
+    "games/launcher.wiki",
+    "templates/md (local merged feature branch)"
+  ],
+  "entries": [
+    {
+      "source": "dashboards/habits",
+      "source_head": "e5962eb2779de3f24c03513b50795f820ec35b01",
+      "status": "deleted",
+      "targets": [
+        "human/private"
+      ],
+      "tracked_files": 264,
+      "mapping": [
+        {
+          "from": "*",
+          "target": "human/private",
+          "to": "src/habits/"
+        }
+      ],
+      "dropped": [
+        ".dockerignore",
+        ".gitattributes",
+        ".gitignore",
+        ".gitea/",
+        "AGENTS.md",
+        "infra/",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: migrated. State, tools, schemas, docs, and tests moved to the private vault; dashboard-wiki carries the public pointer."
+    },
+    {
+      "source": "dashboards/lottery",
+      "source_head": "d0b0a813176aa169b050b10d694d854e57af7a37",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/workflow-lottery",
+        "gardusi-gustavo/dashboard-lottery",
+        "gardusi-gustavo/database"
+      ],
+      "tracked_files": 41,
+      "mapping": [
+        {
+          "from": "docs/issues/",
+          "target": "gardusi-gustavo/workflow-lottery",
+          "to": "docs/issues/"
+        },
+        {
+          "from": "docs/issues/",
+          "target": "gardusi-gustavo/dashboard-lottery",
+          "to": "docs/issues/"
+        },
+        {
+          "from": "src/lottery/",
+          "target": "gardusi-gustavo/workflow-lottery",
+          "to": "src/lottery/"
+        },
+        {
+          "from": "src/frontend/",
+          "target": "gardusi-gustavo/dashboard-lottery",
+          "to": "src/frontend/"
+        },
+        {
+          "from": "docs/data.md",
+          "target": "gardusi-gustavo/dashboard-wiki",
+          "to": "docs/lottery/data.md"
+        }
+      ],
+      "dropped": [
+        ".dockerignore",
+        ".gitattributes",
+        ".gitignore",
+        "AGENTS.md",
+        "README.md",
+        "docs/README.md",
+        "docs/repository/",
+        "infra/",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: split. Data, issues, and UI split; narrative docs still need dashboard-wiki placement."
+    },
+    {
+      "source": "dashboards/news",
+      "source_head": "de71d17b4cfe08ecfe2e0da3d119bb9fa1157aa5",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/workflow-news",
+        "gardusi-gustavo/dashboard-news",
+        "gardusi-gustavo/database"
+      ],
+      "tracked_files": 51,
+      "mapping": [
+        {
+          "from": "src/data/news/",
+          "target": "gardusi-gustavo/database",
+          "to": "data/news/"
+        },
+        {
+          "from": "docs/issues/",
+          "target": "gardusi-gustavo/workflow-news",
+          "to": "docs/issues/"
+        },
+        {
+          "from": "docs/issues/",
+          "target": "gardusi-gustavo/dashboard-news",
+          "to": "docs/issues/"
+        },
+        {
+          "from": "src/frontend/",
+          "target": "gardusi-gustavo/dashboard-news",
+          "to": "src/frontend/"
+        },
+        {
+          "from": "docs/news/",
+          "target": "gardusi-gustavo/dashboard-wiki",
+          "to": "docs/news/"
+        }
+      ],
+      "dropped": [
+        ".dockerignore",
+        ".gitattributes",
+        ".gitignore",
+        "AGENTS.md",
+        "README.md",
+        "docs/README.md",
+        "docs/repository/",
+        "infra/",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: split. Data, issues, and UI split; narrative news docs still need dashboard-wiki placement."
+    },
+    {
+      "source": "dashboards/stocks",
+      "source_head": "0c58df1b60af8fc784573ab8d718d52f68a796b2",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/workflow-stocks",
+        "gardusi-gustavo/dashboard-stocks",
+        "gardusi-gustavo/database"
+      ],
+      "tracked_files": 44,
+      "mapping": [
+        {
+          "from": "src/data/markets/",
+          "target": "gardusi-gustavo/database",
+          "to": "data/stocks/"
+        },
+        {
+          "from": "docs/issues/",
+          "target": "gardusi-gustavo/workflow-stocks",
+          "to": "docs/issues/"
+        },
+        {
+          "from": "docs/issues/",
+          "target": "gardusi-gustavo/dashboard-stocks",
+          "to": "docs/issues/"
+        },
+        {
+          "from": "src/frontend/",
+          "target": "gardusi-gustavo/dashboard-stocks",
+          "to": "src/frontend/"
+        },
+        {
+          "from": "docs/markets/",
+          "target": "gardusi-gustavo/dashboard-wiki",
+          "to": "docs/markets/"
+        }
+      ],
+      "dropped": [
+        ".dockerignore",
+        ".gitattributes",
+        ".gitignore",
+        "AGENTS.md",
+        "README.md",
+        "docs/README.md",
+        "docs/repository/",
+        "infra/",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: split. Data, issues, and UI split; market docs still need dashboard-wiki placement."
+    },
+    {
+      "source": "games/capture",
+      "source_head": "8432f0171c510bbd44ef7aec3736c958ac61d454",
+      "status": "deleted",
+      "targets": [],
+      "tracked_files": 37,
+      "mapping": [],
+      "dropped": [
+        "*"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: dropped. Dropped by migration decision; preserved in the pre-migration and final bundles."
+    },
+    {
+      "source": "games/launcher",
+      "source_head": "fb633ab0c365ebceca3b5aad2fcd6486b469ea6f",
+      "status": "deleted",
+      "targets": [],
+      "tracked_files": 90,
+      "mapping": [],
+      "dropped": [
+        "*"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: dropped. Dropped by migration decision; preserved in the pre-migration and final bundles."
+    },
+    {
+      "source": "knowledge/problem-solving",
+      "source_head": "9c0a7e125be36e466b471915825dd9f38a5cff14",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-cpp"
+      ],
+      "tracked_files": 175,
+      "mapping": [
+        {
+          "from": "src/algorithms/",
+          "target": "gardusi-gustavo/package-cpp",
+          "to": "src/algorithms/"
+        },
+        {
+          "from": "docs/algorithms/",
+          "target": "gardusi-gustavo/package-cpp",
+          "to": "docs/algorithms/"
+        }
+      ],
+      "dropped": [
+        ".gitea/",
+        "AGENTS.md",
+        "README.md",
+        "infra/",
+        "docs/README.md",
+        "docs/repo/",
+        "docs/repository/",
+        "docs/issues/"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: migrated. Algorithms and handbook docs migrated to package-cpp; repository scaffolding dropped."
+    },
+    {
+      "source": "knowledge/system-design",
+      "source_head": "1d2533d20f6c051548e872a230c7128f4c03a8ed",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/dashboard-wiki"
+      ],
+      "tracked_files": 141,
+      "mapping": [
+        {
+          "from": "docs/architecture/",
+          "target": "gardusi-gustavo/dashboard-wiki",
+          "to": "docs/system-design/"
+        }
+      ],
+      "dropped": [
+        ".gitea/",
+        "AGENTS.md",
+        "README.md",
+        "infra/",
+        "src/",
+        "docs/issues/",
+        "docs/repo/",
+        "docs/repository/"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: migrated. Architecture docs migrated to dashboard-wiki; repository and issue scaffolding dropped."
+    },
+    {
+      "source": "private/wiki",
+      "source_head": "41e9efa2fd54b77fa1ba34aaca5206adfd06d243",
+      "status": "deleted",
+      "targets": [],
+      "tracked_files": 773,
+      "mapping": [],
+      "dropped": [
+        "*"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: dropped. Content already present in dashboard-wiki and human/private; only stale scaffolding and legacy Gitea ops notes remain."
+    },
+    {
+      "source": "templates/cs",
+      "source_head": "11b54b12357674a4f24c4369660d913c2e2f6d6f",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-cs"
+      ],
+      "tracked_files": 71,
+      "mapping": [
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/package-cs",
+          "to": "*"
+        }
+      ],
+      "dropped": [
+        "infra/",
+        ".gitea/",
+        "README.md",
+        "AGENTS.md",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Migrated to package-cs; archived repository retired after verification."
+    },
+    {
+      "source": "templates/css",
+      "source_head": "bda861d86ba553b9f1621973fc2c6f0ed9f20db1",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-ui"
+      ],
+      "tracked_files": 9,
+      "mapping": [
+        {
+          "from": "*.css",
+          "target": "gardusi-gustavo/package-ui",
+          "to": "src/css/"
+        }
+      ],
+      "dropped": [
+        "infra/",
+        "dist/",
+        "README.md",
+        "AGENTS.md",
+        "VERSION"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: migrated. CSS tokens and layout migrated to package-ui."
+    },
+    {
+      "source": "templates/docker",
+      "source_head": "9a4d24fc4e88831b760c90113240d62c833965a7",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/devops"
+      ],
+      "tracked_files": 59,
+      "mapping": [
+        {
+          "from": "infra/docker/",
+          "target": "gardusi-gustavo/devops",
+          "to": "infra/docker/templates/"
+        }
+      ],
+      "dropped": [
+        "docs/",
+        "README.md",
+        "AGENTS.md",
+        "VERSION",
+        "dist/"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: migrated. Language CI Dockerfiles moved to devops/infra/docker/templates."
+    },
+    {
+      "source": "templates/git",
+      "source_head": "0098ba78bbaff0a90869f8a64561906e661a85b6",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-sh"
+      ],
+      "tracked_files": 23,
+      "mapping": [
+        {
+          "from": "attributes/",
+          "target": "gardusi-gustavo/package-sh",
+          "to": "infra/templates/git/attributes/"
+        },
+        {
+          "from": "ignore/",
+          "target": "gardusi-gustavo/package-sh",
+          "to": "infra/templates/git/ignore/"
+        },
+        {
+          "from": "config/",
+          "target": "gardusi-gustavo/package-sh",
+          "to": "infra/templates/git/config/"
+        }
+      ],
+      "dropped": [
+        "AGENTS.md",
+        "README.md",
+        "VERSION",
+        "dist/",
+        "infra/"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: migrated. Git attributes, ignore templates, and config moved to package-sh."
+    },
+    {
+      "source": "templates/go",
+      "source_head": "49d3edfe50b0f5a467b8b11a34f353b343edf416",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-go"
+      ],
+      "tracked_files": 70,
+      "mapping": [
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/package-go",
+          "to": "*"
+        }
+      ],
+      "dropped": [
+        "infra/",
+        ".gitea/",
+        "README.md",
+        "AGENTS.md",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Migrated to package-go; archived repository retired after verification."
+    },
+    {
+      "source": "templates/html",
+      "source_head": "69356b730a3a016e10d935308bf4e4686a94dc00",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-ui"
+      ],
+      "tracked_files": 9,
+      "mapping": [
+        {
+          "from": "base.html",
+          "target": "gardusi-gustavo/package-ui",
+          "to": "src/html/base.html"
+        },
+        {
+          "from": "dashboard.html",
+          "target": "gardusi-gustavo/package-ui",
+          "to": "src/html/dashboard.html"
+        },
+        {
+          "from": "components/",
+          "target": "gardusi-gustavo/package-ui",
+          "to": "src/html/components/"
+        }
+      ],
+      "dropped": [
+        "infra/",
+        "dist/",
+        "README.md",
+        "AGENTS.md",
+        "VERSION"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: migrated. HTML partials migrated to package-ui."
+    },
+    {
+      "source": "templates/java",
+      "source_head": "b744481ad40d00a9dd5817c5ee6544c1c920f8bc",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-java"
+      ],
+      "tracked_files": 70,
+      "mapping": [
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/package-java",
+          "to": "*"
+        }
+      ],
+      "dropped": [
+        "infra/",
+        ".gitea/",
+        "README.md",
+        "AGENTS.md",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Migrated to package-java; archived repository retired after verification."
+    },
+    {
+      "source": "templates/json",
+      "source_head": "ba9f09c207f2f2475cb0e7169e447ac2ac6b9e48",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-json",
+        "gardusi-gustavo/devops",
+        "human/private"
+      ],
+      "tracked_files": 68,
+      "mapping": [
+        {
+          "from": "schemas/",
+          "target": "gardusi-gustavo/package-json",
+          "to": "schemas/infra/templates/"
+        },
+        {
+          "from": "config/workflows/",
+          "target": "gardusi-gustavo/devops",
+          "to": "infra/config/workflows/"
+        },
+        {
+          "from": "data/workflows/vault/",
+          "target": "human/private",
+          "to": "src/vault/"
+        }
+      ],
+      "dropped": [
+        "dist/",
+        "docs/",
+        "issues/",
+        "README.md",
+        "AGENTS.md",
+        "VERSION",
+        "infra/",
+        ".gitea/"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: split. Schemas to package-json; workflow configs to devops; vault state to human/private."
+    },
+    {
+      "source": "templates/md",
+      "source_head": "0323328ccded92ce9a02d6d453f9e07e38526cde",
+      "status": "deleted",
+      "targets": [],
+      "tracked_files": 53,
+      "mapping": [],
+      "dropped": [
+        "*"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: dropped. Canonical docs/issues and PR scaffolding already live in devops; agent template repo superseded."
+    },
+    {
+      "source": "templates/php",
+      "source_head": "038ba789c16dae2204aad24ee492f4008bffc2c2",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-php"
+      ],
+      "tracked_files": 71,
+      "mapping": [
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/package-php",
+          "to": "*"
+        }
+      ],
+      "dropped": [
+        "infra/",
+        ".gitea/",
+        "README.md",
+        "AGENTS.md",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Migrated to package-php; archived repository retired after verification."
+    },
+    {
+      "source": "templates/rb",
+      "source_head": "b1624d4edc9c586565ca58cfc7145fe67615e990",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-rb"
+      ],
+      "tracked_files": 72,
+      "mapping": [
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/package-rb",
+          "to": "*"
+        }
+      ],
+      "dropped": [
+        "infra/",
+        ".gitea/",
+        "README.md",
+        "AGENTS.md",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Migrated to package-rb; archived repository retired after verification."
+    },
+    {
+      "source": "templates/rs",
+      "source_head": "ce9107a7b75cd0f4ca8905ee5492ad45771b9267",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-rs"
+      ],
+      "tracked_files": 73,
+      "mapping": [
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/package-rs",
+          "to": "*"
+        }
+      ],
+      "dropped": [
+        "infra/",
+        ".gitea/",
+        "README.md",
+        "AGENTS.md",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Migrated to package-rs; archived repository retired after verification."
+    },
+    {
+      "source": "templates/toolkit",
+      "source_head": "e3d3eded8b67516fec27c9d49986ab6c4cba6e71",
+      "status": "deleted",
+      "targets": [],
+      "tracked_files": 109,
+      "mapping": [],
+      "dropped": [
+        "*"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: cold-storage. Contract tests are not used by the current repositories."
+    },
+    {
+      "source": "templates/ts",
+      "source_head": "007a5e16f650c966a5337a5335be10f8f57d336a",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-ts"
+      ],
+      "tracked_files": 80,
+      "mapping": [
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/package-ts",
+          "to": "*"
+        }
+      ],
+      "dropped": [
+        "infra/",
+        ".gitea/",
+        "README.md",
+        "AGENTS.md",
+        "template.version"
+      ],
+      "pending": [],
+      "reason": "Migrated to package-ts; archived repository retired after verification."
+    },
+    {
+      "source": "templates/yml",
+      "source_head": "119ec62144cfc9f016b18a9b2d68b3867247270d",
+      "status": "deleted",
+      "targets": [],
+      "tracked_files": 9,
+      "mapping": [],
+      "dropped": [
+        "*"
+      ],
+      "pending": [],
+      "reason": "Retired after migration manifest completion. Previous status: dropped. Superseded by devops reusable GitHub workflows."
+    }
+  ]
+}

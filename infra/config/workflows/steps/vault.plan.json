@@ -1,0 +1,36 @@
+{
+  "id": "vault.plan",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 120,
+  "input_object_schema": "schemas/vault/collections.schema.json#/$defs/itemClassifiedList",
+  "output_object_schema": "schemas/vault/collections.schema.json#/$defs/planActionList",
+  "transition": null,
+  "idempotency": "run_id + item_ids",
+  "side_effects": [
+    "state.read"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run vault.plan --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "items",
+    "concurrency": 2
+  },
+  "postconditions": [
+    {
+      "check": "every_item_has_action"
+    }
+  ],
+  "failure_classes": [
+    "invalid_input"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

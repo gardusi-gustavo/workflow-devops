@@ -1,0 +1,43 @@
+{
+  "id": "backup.reconcile",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 600,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/reconcileInput",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/reconcileReport",
+  "transition": null,
+  "idempotency": "archive_sha256 + mirror_set",
+  "side_effects": [
+    "file.copy"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.reconcile --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "mirrors",
+    "concurrency": 2
+  },
+  "postconditions": [
+    {
+      "check": "all_mirrors_have_archive"
+    }
+  ],
+  "failure_classes": [
+    "mirror_incomplete",
+    "io_error"
+  ],
+  "retry": {
+    "max_attempts": 1,
+    "on": [
+      "transient"
+    ],
+    "backoff": {
+      "strategy": "fixed",
+      "initial_seconds": 10
+    }
+  }
+}

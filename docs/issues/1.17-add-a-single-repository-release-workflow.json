@@ -1,0 +1,25 @@
+{
+  "rank": "1.17",
+  "title": "Add a single-repository release workflow",
+  "context": "One command releases one repository: bump the package version, commit, tag, and publish artifacts with the tag equal to the published version.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add a single-repository release workflow",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`release.sh single <repo> <version>` updates the package version.",
+      "The tag equals the package version.",
+      "CI runs before the tag is pushed.",
+      "The workflow refuses when the working tree is dirty or `main` is behind.",
+      "Dry-run mode prints the planned changes.",
+      "Drift is detected and reported, not silently fixed.",
+      "behavior implemented",
+      "validation command documented",
+      "rollback documented"
+    ]
+  },
+  "attempts": []
+}

@@ -1,0 +1,19 @@
+{
+  "rank": "1.21",
+  "title": "Wire bundle backup to the daily timer",
+  "context": "The bundle scripts are tested but not scheduled.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Replace the daily dump entrypoint with bundle-all, keeping a weekly full dump fallback.",
+    "expected_outcome": "Bundles run daily and the full dump runs weekly until retirement.",
+    "acceptance_criteria": [
+      "Timer runs bundle-all",
+      "Weekly dump remains documented",
+      "Status reports both modes"
+    ]
+  },
+  "attempts": []
+}

@@ -1,0 +1,27 @@
+{
+  "rank": "1.29",
+  "title": "Bound backup retention",
+  "context": "<!-- docs-issue:01a16f9d-66c7-7588-a17e-fbc718706a38 -->",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "<!-- docs-issue:01a16f9d-66c7-7588-a17e-fbc718706a38 -->",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "total budget, reserve, and per-repo budget are computed from repository count",
+      "each plan keeps the newest tags that fit the repo budget",
+      "oldest tags are deleted before missing tags are added",
+      "latest three tags are always retained",
+      "review reports total size, headroom, and deletion candidates",
+      "no deletion happens without a reviewed plan",
+      "Confirm the scope and constraints.",
+      "Complete the acceptance criteria.",
+      "Record decisions and evidence in this file.",
+      "`validate-repo.sh` passes",
+      "`validate-issues.sh` passes"
+    ]
+  },
+  "attempts": []
+}

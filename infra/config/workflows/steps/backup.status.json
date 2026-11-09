@@ -1,0 +1,37 @@
+{
+  "id": "backup.status",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 60,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/backupRunResult",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupStatus",
+  "transition": null,
+  "idempotency": "run_id",
+  "side_effects": [
+    "file.write"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.status --root . --json",
+  "postconditions": [
+    {
+      "check": "status_written"
+    }
+  ],
+  "failure_classes": [
+    "io_error"
+  ],
+  "retry": {
+    "max_attempts": 1,
+    "on": [
+      "transient"
+    ],
+    "backoff": {
+      "strategy": "fixed",
+      "initial_seconds": 5
+    }
+  }
+}

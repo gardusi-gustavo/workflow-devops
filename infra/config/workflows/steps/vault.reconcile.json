@@ -1,0 +1,43 @@
+{
+  "id": "vault.reconcile",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 600,
+  "input_object_schema": "schemas/vault/collections.schema.json#/$defs/planActionList",
+  "output_object_schema": "schemas/vault/objects.schema.json#/$defs/reconcileReport",
+  "transition": null,
+  "idempotency": "run_id + card_mtime",
+  "side_effects": [
+    "card.read",
+    "state.write",
+    "event.append"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run vault.reconcile --root . --json",
+  "preconditions": [
+    {
+      "check": "mount",
+      "path": "card_root"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "counts_match_scan"
+    },
+    {
+      "check": "no_media_writes"
+    }
+  ],
+  "failure_classes": [
+    "not_mounted",
+    "io_error"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

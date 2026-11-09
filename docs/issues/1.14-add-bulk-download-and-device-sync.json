@@ -1,0 +1,25 @@
+{
+  "rank": "1.14",
+  "title": "Add bulk download and device sync",
+  "context": "Download or sync many repositories to a device, detecting what is missing or stale before copying.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add bulk download and device sync",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`sync.sh --device microsd --repo ...` plans before copying.",
+      "Missing, stale, and extra entries are reported.",
+      "Nothing is deleted without `--prune`.",
+      "A `.sync-state.json` records the last synced commit per repository.",
+      "The command exits non-zero when the device is not in the desired state.",
+      "Docs cover a second device with a different state.",
+      "behavior implemented",
+      "validation command documented",
+      "rollback documented"
+    ]
+  },
+  "attempts": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "backup.lock",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 30,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/lockRequest",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/lockHandle",
+  "transition": null,
+  "idempotency": "lock_file + run_id",
+  "side_effects": [
+    "lock.acquire"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.lock --root . --json",
+  "preconditions": [
+    {
+      "check": "lock_available"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "lock_held"
+    }
+  ],
+  "failure_classes": [
+    "lock_busy"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

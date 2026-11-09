@@ -1,0 +1,23 @@
+{
+  "rank": "1.15",
+  "title": "Add single tag ZIP download",
+  "context": "Download one release as a single ZIP that contains the repository tree at the tag.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add single tag ZIP download",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`download.sh <repo> <tag>` writes a ZIP to a chosen path.",
+      "The ZIP contains the tree at the tag, not `main`.",
+      "The SHA256 is printed and written next to the archive.",
+      "A missing tag fails with a clear message.",
+      "Works for public and private repositories.",
+      "behavior implemented",
+      "validation command documented"
+    ]
+  },
+  "attempts": []
+}

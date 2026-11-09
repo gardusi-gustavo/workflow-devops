@@ -1,0 +1,30 @@
+{
+  "rank": "1.8",
+  "title": "Add encrypted backup uploads to cloud drives",
+  "context": "Upload the latest encrypted `backup.7z` and its checksum to cloud drives through rclone.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add encrypted backup uploads to cloud drives",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "rclone remotes are configured for the supported providers.",
+      "`upload.sh` copies `backup.7z` and `backup.7z.sha256`.",
+      "The remote checksum is verified after upload.",
+      "At least one provider restores successfully in a drill.",
+      "Tokens live outside the repository, mode 600.",
+      "A failed provider does not remove the local or previous remote copy.",
+      "No media or observability data is uploaded.",
+      "Provider issues.",
+      "Restore drill.",
+      "behavior implemented",
+      "validation command documented",
+      "runbook updated",
+      "rollback documented",
+      "restore drill recorded"
+    ]
+  },
+  "attempts": []
+}

@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "name": "workflow-devops",
+  "organization": "gardusi-gustavo",
+  "layer": 1,
+  "kind": "tooling",
+  "visibility": "public",
+  "platforms": [
+    "gitea",
+    "github"
+  ],
+  "features": {
+    "ci": true,
+    "pages": false,
+    "release": false,
+    "observability": false
+  },
+  "limits": {
+    "repo_mb": 150,
+    "file_mb": 25,
+    "max_symlinks": 0
+  },
+  "ci": {
+    "script": "infra/scripts/ci.sh",
+    "timeout_minutes": 15,
+    "required_jobs": [
+      "ci"
+    ],
+    "primary": "github",
+    "profile": "universal"
+  },
+  "pages": {
+    "enabled": false,
+    "output": "public",
+    "generator": "custom",
+    "publish": {
+      "gitea": false,
+      "github": false
+    }
+  },
+  "binaries": {
+    "allowed": [],
+    "allow_private_data": false
+  },
+  "versioning": {
+    "scheme": "semver",
+    "tag_prefix": "v",
+    "release_artifacts": false
+  },
+  "readme": {
+    "max_lines": 100
+  },
+  "data_classification": "public",
+  "depends_on": [],
+  "consumers": [],
+  "files": {
+    "infra_max_file_mb": 1,
+    "rules": {
+      "": {
+        "allow_names": [
+          "README.md",
+          "AGENTS.md",
+          ".gitignore",
+          ".gitattributes",
+          ".dockerignore",
+          "VERSION",
+          "template.version"
+        ],
+        "allow_globs": []
+      },
+      "docs/": {
+        "allow_extensions": [
+          ".md"
+        ],
+        "allow_names": [
+          ".gitkeep"
+        ]
+      },
+      "docs/issues/": {
+        "allow_extensions": [
+          ".json",
+          ".md"
+        ],
+        "allow_names": []
+      },
+      "src/": {
+        "allow_extensions": [
+          ".py",
+          ".yml",
+          ".yaml",
+          ".json",
+          ".jsonl"
+        ],
+        "allow_names": [
+          ".gitkeep"
+        ]
+      },
+      "infra/config/": {
+        "allow_extensions": [
+          ".json"
+        ]
+      },
+      "infra/scripts/": {
+        "allow_extensions": [
+          ".sh",
+          ".py"
+        ]
+      },
+      ".gitea/workflows/": {
+        "allow_extensions": [
+          ".yml",
+          ".yaml"
+        ]
+      },
+      ".gitea/": {
+        "allow_names": [
+          "pull_request_template.md"
+        ],
+        "allow_extensions": [
+          ".md",
+          ".yml",
+          ".yaml"
+        ]
+      },
+      ".github/": {
+        "allow_globs": [
+          "*"
+        ],
+        "allow_names": [
+          "CODEOWNERS"
+        ]
+      },
+      ".github/workflows/": {
+        "allow_extensions": [
+          ".yml",
+          ".yaml"
+        ]
+      },
+      ".github/ISSUE_TEMPLATE/": {
+        "allow_extensions": [
+          ".yml",
+          ".yaml",
+          ".md"
+        ]
+      },
+      "docs/runbooks/": {
+        "allow_extensions": [
+          ".md"
+        ]
+      },
+      "docs/security/": {
+        "allow_extensions": [
+          ".md"
+        ]
+      },
+      "scripts/": {
+        "allow_extensions": [
+          ".py"
+        ]
+      },
+      "infra/runner/": {
+        "allow_extensions": [
+          ".yml",
+          ".yaml"
+        ]
+      }
+    },
+    "forbid": [
+      {
+        "regex": "(^|/)[^/]*\\.md$",
+        "reason": "Markdown is allowed only in docs/, .gitea/, .github/, README.md, and AGENTS.md",
+        "allow": [
+          "^README\\.md$",
+          "^AGENTS\\.md$",
+          "^docs/",
+          "^schemas/",
+          "^sql/",
+          "^\\.gitea/",
+          "^\\.github/"
+        ]
+      },
+      {
+        "regex": "^infra/data/",
+        "reason": "infra/data is retired; use src/data"
+      },
+      {
+        "regex": "^infra/.*\\.(pdf|png|jpg|jpeg|gif|webp|mp4|mp3|zip|gz|tar|7z)$",
+        "reason": "infra is repository management only"
+      },
+      {
+        "regex": "^\\.gitlab-ci\\.yml$",
+        "reason": "GitLab is not a source"
+      }
+    ]
+  },
+  "dependencies": {
+    "gardusi-gustavo/package-sh": "v0.7.0"
+  }
+}

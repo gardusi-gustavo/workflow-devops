@@ -1,0 +1,26 @@
+{
+  "rank": "1.27",
+  "title": "Resumable graph",
+  "context": "<!-- docs-issue:01a16f9d-66d9-73fe-add6-d0425f464a86 -->",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "<!-- docs-issue:01a16f9d-66d9-73fe-add6-d0425f464a86 -->",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "steps declare dependencies",
+      "failed steps retry with bounded backoff",
+      "waits are explicit",
+      "a partial failure can resume without duplicating completed work",
+      "the final state is observable",
+      "Confirm the scope and constraints.",
+      "Complete the acceptance criteria.",
+      "Record decisions and evidence in this file.",
+      "`validate-repo.sh` passes",
+      "`validate-issues.sh` passes"
+    ]
+  },
+  "attempts": []
+}

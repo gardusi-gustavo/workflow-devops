@@ -1,0 +1,25 @@
+{
+  "rank": "2.1",
+  "title": "Investigate release artifacts",
+  "context": "<!-- docs-issue:01a16f9d-66b6-7120-b9a6-5340ac5846e0 -->",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "<!-- docs-issue:01a16f9d-66b6-7120-b9a6-5340ac5846e0 -->",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "Every plan item has an answer or is explicitly deferred.",
+      "The outcome is linked from the repository docs.",
+      "Prefer Git tags over releases.",
+      "Identify artifacts that are genuinely reusable across repositories.",
+      "Avoid committing or publishing binaries unless there is a concrete consumer.",
+      "Candidate exceptions: CLI binaries/image, browser-tools extension bundles, shared CI images.",
+      "Define artifact size limits and retention.",
+      "`validate-repo.sh` passes",
+      "`validate-issues.sh` passes"
+    ]
+  },
+  "attempts": []
+}

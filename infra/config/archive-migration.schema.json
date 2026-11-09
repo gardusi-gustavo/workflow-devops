@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Archive migration manifest",
+  "type": "object",
+  "required": [
+    "version",
+    "generated_at",
+    "entries"
+  ],
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "local_cold_storage": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "source",
+        "source_head",
+        "status",
+        "targets",
+        "tracked_files",
+        "mapping",
+        "dropped",
+        "pending",
+        "reason"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "source_head": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "migrated",
+            "split",
+            "deleted",
+            "dropped",
+            "cold-storage",
+            "pending"
+          ]
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tracked_files": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mapping": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "from",
+              "target",
+              "to"
+            ],
+            "properties": {
+              "from": {
+                "type": "string",
+                "minLength": 1
+              },
+              "target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "to": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "dropped": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pending": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

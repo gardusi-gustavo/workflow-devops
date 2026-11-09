@@ -1,0 +1,21 @@
+{
+  "rank": "1.23",
+  "title": "Define artifact retention",
+  "context": "Define how long CI and release artifacts are kept and what is restored.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Define artifact retention",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "Every artifact class has a retention period.",
+      "Cleanup is automated.",
+      "Restore is tested.",
+      "Size is reported.",
+      "Personal data is never retained longer than allowed."
+    ]
+  },
+  "attempts": []
+}

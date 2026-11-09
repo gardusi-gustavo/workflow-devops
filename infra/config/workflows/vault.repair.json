@@ -1,0 +1,32 @@
+{
+  "id": "vault.repair",
+  "version": "1.0.0",
+  "title": "Vault repair and publish",
+  "trigger": {
+    "manual": true,
+    "event": "ticket.assigned"
+  },
+  "input_object_schema": "schemas/vault/collections.schema.json#/$defs/itemOnCardList",
+  "execution": {
+    "default_input": "schemas/vault/collections.schema.json#/$defs/itemOnCardList",
+    "default_output": "schemas/vault/collections.schema.json#/$defs/itemPublishedList",
+    "concurrency_lock": "vault.repair"
+  },
+  "steps": [
+    "vault.fetch@1.0.0",
+    "vault.transform@1.0.0",
+    "vault.verify@1.0.0",
+    "vault.publish@1.0.0",
+    "vault.cleanup@1.0.0"
+  ],
+  "limits": {
+    "runtime_minutes": 120,
+    "max_items": 100,
+    "stop_on_item_failure": true,
+    "writes": [
+      "store",
+      "card",
+      "state"
+    ]
+  }
+}

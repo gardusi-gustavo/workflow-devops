@@ -1,0 +1,26 @@
+{
+  "rank": "1.33",
+  "title": "Add high-level gitea-api subcommands and a deletion validator",
+  "context": "Add high-level append-only subcommands to `gitea-api` and a read-only pull",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add high-level gitea-api subcommands and a deletion validator",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`issue new` accepts `--repo`, `--title`, `--body-file`, optional",
+      "`issue comment` accepts `--repo`, `--number`, and `--body-file`.",
+      "`pr new` accepts `--repo`, `--title`, and `--body-file`; infers the issue",
+      "`status` prints open issues and pull requests for one repository.",
+      "`audit` wraps `audit-issue-authority.sh`.",
+      "All subcommands still use the append-only allowlist; destructive paths",
+      "The deletion validator fails when the diff deletes a file and the body",
+      "The validator is read-only and runs in CI.",
+      "Tests cover the allowlist and the validator.",
+      "Docs are updated."
+    ]
+  },
+  "attempts": []
+}

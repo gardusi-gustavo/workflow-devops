@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "orgs": [
+    {
+      "name": "gardusi-gustavo",
+      "full_name": "Gardusi Gustavo",
+      "description": "Public staging for packages, workflows, dashboards, and games",
+      "visibility": "public"
+    }
+  ]
+}

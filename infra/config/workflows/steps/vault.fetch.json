@@ -1,0 +1,66 @@
+{
+  "id": "vault.fetch",
+  "version": "1.0.0",
+  "kind": "transform",
+  "timeout_seconds": 900,
+  "input_object_schema": "schemas/vault/collections.schema.json#/$defs/itemOnCardList",
+  "output_object_schema": "schemas/vault/collections.schema.json#/$defs/itemProcessingList",
+  "transition": {
+    "from": [
+      "on_card",
+      "repairing"
+    ],
+    "to": "processing"
+  },
+  "idempotency": "item_id + sha256",
+  "side_effects": [
+    "card.read",
+    "store.write",
+    "state.write",
+    "event.append"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run vault.fetch --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "items",
+    "concurrency": 2
+  },
+  "preconditions": [
+    {
+      "check": "card_present"
+    },
+    {
+      "check": "hash_present"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "store_present"
+    },
+    {
+      "check": "hash_equal"
+    }
+  ],
+  "failure_classes": [
+    "not_mounted",
+    "hash_mismatch",
+    "no_space",
+    "io_error"
+  ],
+  "retry": {
+    "max_attempts": 1,
+    "on": [
+      "transient"
+    ],
+    "backoff": {
+      "strategy": "exponential",
+      "initial_seconds": 5,
+      "max_seconds": 60
+    }
+  }
+}

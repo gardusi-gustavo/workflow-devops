@@ -1,0 +1,195 @@
+{
+  "repository": {
+    "default_merge_style": "squash",
+    "default_delete_branch_after_merge": true,
+    "allow_merge_commits": false,
+    "allow_rebase": false,
+    "allow_rebase_explicit": false,
+    "allow_fast_forward_only_merge": false,
+    "allow_squash_merge": true
+  },
+  "pull_requests": {
+    "max_open_per_repo": 3,
+    "include_drafts": true,
+    "allow_same_head_updates": true,
+    "enforce_identities": [
+      "human",
+      "bot-event",
+      "bot-cron",
+      "bot-manual"
+    ],
+    "size": {
+      "max_reviewable_lines": 500,
+      "max_reviewable_lines_per_file": 250,
+      "max_files_changed": 12,
+      "max_commits": 10,
+      "max_generated_files": 10,
+      "max_generated_bytes": 10485760,
+      "max_generated_file_bytes": 5242880,
+      "max_binary_files": 20,
+      "max_binary_file_bytes": 10485760,
+      "max_binary_bytes": 52428800,
+      "max_combined_bytes": 57671680,
+      "max_added_bytes": 62914560,
+      "max_data_files": 10,
+      "max_data_bytes": 5242880,
+      "generated_patterns": [
+        "package-lock.json",
+        "npm-shrinkwrap.json",
+        "yarn.lock",
+        "pnpm-lock.yaml",
+        "bun.lockb",
+        "Cargo.lock",
+        "poetry.lock",
+        "Pipfile.lock",
+        "uv.lock",
+        "go.sum",
+        "composer.lock",
+        "Gemfile.lock",
+        "mix.lock",
+        "pubspec.lock",
+        "*.min.js",
+        "*.min.css",
+        "*.map",
+        "*.snap",
+        "**/__snapshots__/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/vendor/**",
+        "**/generated/**",
+        "*.generated.*",
+        "dist/**",
+        "build/**",
+        "vendor/**",
+        "generated/**",
+        "__snapshots__/**",
+        "infra/scripts/ci/**",
+        "infra/scripts/check-layout.sh"
+      ],
+      "data_patterns": [],
+      "grandfathered": []
+    },
+    "fail_closed": true
+  },
+  "branch_protection": {
+    "branch_name": "main",
+    "priority": 1,
+    "enable_push": false,
+    "enable_push_whitelist": false,
+    "push_whitelist_usernames": [],
+    "push_whitelist_teams": [],
+    "push_whitelist_deploy_keys": false,
+    "enable_merge_whitelist": true,
+    "merge_whitelist_usernames": [
+      "human"
+    ],
+    "merge_whitelist_teams": [
+      "reviewers"
+    ],
+    "enable_bypass_allowlist": false,
+    "bypass_allowlist_usernames": [],
+    "bypass_allowlist_teams": [],
+    "enable_force_push": false,
+    "enable_force_push_allowlist": false,
+    "force_push_allowlist_usernames": [],
+    "force_push_allowlist_teams": [],
+    "force_push_allowlist_deploy_keys": false,
+    "enable_status_check": true,
+    "status_check_contexts": [
+      "ci / ci (pull_request)"
+    ],
+    "enable_approvals_whitelist": true,
+    "approvals_whitelist_username": [
+      "human"
+    ],
+    "approvals_whitelist_teams": [
+      "reviewers"
+    ],
+    "required_approvals": 1,
+    "block_on_rejected_reviews": true,
+    "block_on_official_review_requests": false,
+    "block_on_codeowner_reviews": false,
+    "block_on_outdated_branch": true,
+    "dismiss_stale_approvals": true,
+    "ignore_stale_approvals": false,
+    "require_signed_commits": false,
+    "protected_file_patterns": "",
+    "unprotected_file_patterns": "",
+    "block_admin_merge_override": true
+  },
+  "tag_protection": {
+    "name_pattern": "v*",
+    "whitelist_usernames": [],
+    "whitelist_teams": [
+      "reviewers"
+    ],
+    "whitelist_deploy_keys": false
+  },
+  "agent": {
+    "trigger_mode": "manual",
+    "repo_allowlist": [
+      "gardusi-gustavo/*"
+    ],
+    "repo_denylist": [
+      "human/private",
+      "gardusi-gustavo/private",
+      "gardusi-gustavo/database"
+    ],
+    "max_active_issues": 3,
+    "focus_slots": 1,
+    "hyperfocus_slots": 2,
+    "max_working_issues": 1,
+    "max_failed_issues": 2,
+    "max_attempts_per_issue": 2,
+    "max_open_branches_per_issue": 1,
+    "max_open_prs_per_issue": 1,
+    "lifetime_prs_per_issue": 2,
+    "timeout_minutes": 60,
+    "max_bot_revisions_per_pr": 3,
+    "stale_pr_days": 7,
+    "stale_issue_days": 14,
+    "labels": {
+      "focus": "agent:focus",
+      "hyperfocus": "agent:hyperfocus",
+      "working": "agent:working",
+      "failed": "agent:failed",
+      "stale": "agent:stale",
+      "blocked": "agent:blocked"
+    }
+  },
+  "repositories": {
+    "hard_cap": 50,
+    "count_archived": true
+  },
+  "no_ci_repos": [
+    "gardusi-gustavo/dashboard-lottery",
+    "gardusi-gustavo/dashboard-news",
+    "gardusi-gustavo/dashboard-stocks",
+    "gardusi-gustavo/dashboard-wiki",
+    "gardusi-gustavo/database",
+    "gardusi-gustavo/game-crosswords",
+    "gardusi-gustavo/game-logic-grid",
+    "gardusi-gustavo/game-sudoku",
+    "gardusi-gustavo/package-cpp",
+    "gardusi-gustavo/package-cs",
+    "gardusi-gustavo/package-docker",
+    "gardusi-gustavo/package-go",
+    "gardusi-gustavo/package-graphql",
+    "gardusi-gustavo/package-java",
+    "gardusi-gustavo/package-json",
+    "gardusi-gustavo/package-php",
+    "gardusi-gustavo/package-proto",
+    "gardusi-gustavo/package-python",
+    "gardusi-gustavo/package-rb",
+    "gardusi-gustavo/package-rs",
+    "gardusi-gustavo/package-sh",
+    "gardusi-gustavo/package-sql",
+    "gardusi-gustavo/package-ts",
+    "gardusi-gustavo/package-ui",
+    "gardusi-gustavo/workflow-agent",
+    "gardusi-gustavo/workflow-devops",
+    "gardusi-gustavo/workflow-lottery",
+    "gardusi-gustavo/workflow-news",
+    "gardusi-gustavo/workflow-stocks"
+  ]
+}

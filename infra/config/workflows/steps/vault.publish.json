@@ -1,0 +1,65 @@
+{
+  "id": "vault.publish",
+  "version": "1.0.0",
+  "kind": "transform",
+  "timeout_seconds": 900,
+  "input_object_schema": "schemas/vault/collections.schema.json#/$defs/itemVerifiedList",
+  "output_object_schema": "schemas/vault/collections.schema.json#/$defs/itemPublishedList",
+  "transition": {
+    "from": [
+      "ready"
+    ],
+    "to": "published"
+  },
+  "idempotency": "item_id + sha256",
+  "side_effects": [
+    "store.read",
+    "card.write",
+    "state.write",
+    "event.append"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run vault.publish --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "items",
+    "concurrency": 1
+  },
+  "preconditions": [
+    {
+      "check": "mount"
+    },
+    {
+      "check": "free_floor"
+    },
+    {
+      "check": "verified"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "card_exists"
+    },
+    {
+      "check": "hash_equal"
+    },
+    {
+      "check": "stage",
+      "value": "published"
+    }
+  ],
+  "failure_classes": [
+    "not_mounted",
+    "no_space",
+    "hash_mismatch",
+    "io_error"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

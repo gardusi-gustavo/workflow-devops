@@ -1,0 +1,59 @@
+{
+  "id": "vault.verify",
+  "version": "1.0.0",
+  "kind": "verify",
+  "timeout_seconds": 1800,
+  "input_object_schema": "schemas/vault/collections.schema.json#/$defs/itemReadyList",
+  "output_object_schema": "schemas/vault/collections.schema.json#/$defs/itemVerifiedList",
+  "transition": {
+    "from": [
+      "ready"
+    ],
+    "to": "ready"
+  },
+  "idempotency": "item_id + sha256 + profile",
+  "side_effects": [
+    "store.read",
+    "state.write",
+    "event.append"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "medium",
+    "network": false
+  },
+  "command": "sb run vault.verify --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "items",
+    "concurrency": 2
+  },
+  "preconditions": [
+    {
+      "check": "hash_present"
+    },
+    {
+      "check": "decode"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "hash_equal"
+    },
+    {
+      "check": "profile_match"
+    }
+  ],
+  "failure_classes": [
+    "hash_mismatch",
+    "profile_mismatch",
+    "decode_error"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  },
+  "config": {
+    "media_profile_id": "video-720p-h264-aac"
+  }
+}

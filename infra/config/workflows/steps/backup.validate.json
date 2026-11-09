@@ -1,0 +1,34 @@
+{
+  "id": "backup.validate",
+  "version": "1.0.0",
+  "kind": "verify",
+  "timeout_seconds": 600,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/backupDump",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupValidation",
+  "transition": null,
+  "idempotency": "dump_dir + manifest_sha256",
+  "side_effects": [
+    "dump.read"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "medium",
+    "network": false
+  },
+  "command": "sb run backup.validate --root . --json",
+  "postconditions": [
+    {
+      "check": "sqlite_integrity_ok"
+    },
+    {
+      "check": "git_fsck_ok"
+    }
+  ],
+  "failure_classes": [
+    "corrupt_dump"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

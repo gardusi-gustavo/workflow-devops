@@ -1,0 +1,19 @@
+{
+  "rank": "1.20",
+  "title": "Export Gitea issues and PRs before retirement",
+  "context": "Bundles preserve Git history but not issue and PR metadata.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add a portable metadata export for issues, PRs, comments, labels, and users.",
+    "expected_outcome": "The metadata export can be restored and reviewed without Gitea.",
+    "acceptance_criteria": [
+      "Export covers every active repository",
+      "Comments and labels are included",
+      "A restore check is documented"
+    ]
+  },
+  "attempts": []
+}

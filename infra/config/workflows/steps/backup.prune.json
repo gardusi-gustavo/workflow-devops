@@ -1,0 +1,45 @@
+{
+  "id": "backup.prune",
+  "version": "1.0.0",
+  "kind": "transform",
+  "timeout_seconds": 300,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/pruneInput",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupPrune",
+  "transition": null,
+  "idempotency": "destination + archive_sha256 + policy",
+  "side_effects": [
+    "file.delete"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.prune --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "destinations",
+    "concurrency": 2
+  },
+  "preconditions": [
+    {
+      "check": "all_copies_verified"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "under_budget"
+    },
+    {
+      "check": "minimum_met"
+    }
+  ],
+  "failure_classes": [
+    "retention_violation",
+    "io_error"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

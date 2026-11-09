@@ -1,0 +1,68 @@
+{
+  "id": "vault.transform",
+  "version": "1.0.0",
+  "kind": "transform",
+  "timeout_seconds": 7200,
+  "input_object_schema": "schemas/vault/collections.schema.json#/$defs/itemProcessingList",
+  "output_object_schema": "schemas/vault/collections.schema.json#/$defs/itemReadyList",
+  "transition": {
+    "from": [
+      "processing"
+    ],
+    "to": "ready"
+  },
+  "idempotency": "item_id + source_sha256 + profile",
+  "side_effects": [
+    "store.read",
+    "store.write",
+    "state.write",
+    "event.append"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "high",
+    "network": false
+  },
+  "command": "sb run vault.transform --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "items",
+    "concurrency": 2
+  },
+  "preconditions": [
+    {
+      "check": "store_present"
+    },
+    {
+      "check": "profile_set"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "output_hash_set"
+    },
+    {
+      "check": "profile_match"
+    }
+  ],
+  "failure_classes": [
+    "profile_mismatch",
+    "io_error",
+    "no_space",
+    "transient"
+  ],
+  "retry": {
+    "max_attempts": 1,
+    "on": [
+      "transient"
+    ],
+    "backoff": {
+      "strategy": "exponential",
+      "initial_seconds": 10,
+      "max_seconds": 300
+    }
+  },
+  "config": {
+    "media_profile_id": "video-720p-h264-aac"
+  }
+}

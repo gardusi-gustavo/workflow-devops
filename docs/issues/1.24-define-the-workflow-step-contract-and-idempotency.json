@@ -1,0 +1,22 @@
+{
+  "rank": "1.24",
+  "title": "Define the workflow step contract and idempotency",
+  "context": "Define the shape of a workflow step and the rules that make retries safe.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Define the workflow step contract and idempotency",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "Every step declares inputs and outputs.",
+      "Retryable steps have an idempotency key.",
+      "Timeouts are required.",
+      "A failed step is resumable or clearly terminal.",
+      "Progress is observable.",
+      "No unbounded retry loop exists."
+    ]
+  },
+  "attempts": []
+}

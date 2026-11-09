@@ -1,0 +1,50 @@
+{
+  "id": "backup.copy",
+  "version": "1.0.0",
+  "kind": "transform",
+  "timeout_seconds": 900,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/backupCopyInput",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupCopy",
+  "transition": null,
+  "idempotency": "archive_sha256 + destination",
+  "side_effects": [
+    "file.write"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.copy --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "destinations",
+    "concurrency": 4
+  },
+  "preconditions": [
+    {
+      "check": "destination_writable"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "temp_copy_exists"
+    }
+  ],
+  "failure_classes": [
+    "no_space",
+    "copy_failed",
+    "transient"
+  ],
+  "retry": {
+    "max_attempts": 1,
+    "on": [
+      "transient"
+    ],
+    "backoff": {
+      "strategy": "exponential",
+      "initial_seconds": 5,
+      "max_seconds": 60
+    }
+  }
+}

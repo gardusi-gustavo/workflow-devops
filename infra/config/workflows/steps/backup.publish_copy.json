@@ -1,0 +1,39 @@
+{
+  "id": "backup.publish_copy",
+  "version": "1.0.0",
+  "kind": "transform",
+  "timeout_seconds": 120,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/backupCopy",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupCopy",
+  "transition": null,
+  "idempotency": "archive_sha256 + destination",
+  "side_effects": [
+    "file.rename"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.publish_copy --root . --json",
+  "execution_strategy": {
+    "type": "matrix",
+    "iterate_over_input": "verified_copies",
+    "concurrency": 4
+  },
+  "postconditions": [
+    {
+      "check": "final_exists"
+    },
+    {
+      "check": "sidecar_exists"
+    }
+  ],
+  "failure_classes": [
+    "rename_failed"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

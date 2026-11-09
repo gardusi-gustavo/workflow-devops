@@ -1,0 +1,33 @@
+{
+  "rank": "1.32",
+  "title": "Make backups org-aware and drive-friendly",
+  "context": "Keep one org/repo hierarchy locally and online, with encryption and a tested",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Make backups org-aware and drive-friendly",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "The org/repo tree is documented for local and online copy.",
+      "`private` and the Gitea dump are encrypted.",
+      "Local clones are explicitly excluded.",
+      "Linux/OpenCode/SSH config is included or explicitly excluded with a reason.",
+      "Online sync preserves the same hierarchy and checksums.",
+      "A restore drill recreates the local org/repo layout.",
+      "The backup README links the org model and ADR-0005.",
+      "The microSD state check still passes.",
+      "Document the canonical tree.",
+      "Add encryption for private archives and the dump.",
+      "Add the online sync command.",
+      "Add the Linux/OpenCode/SSH backup scope.",
+      "Write and test the restore drill.",
+      "Link the org model and backup ADR.",
+      "`verify-card` passes.",
+      "A restore drill reconstructs the local layout.",
+      "No plaintext private archive or dump is uploaded."
+    ]
+  },
+  "attempts": []
+}

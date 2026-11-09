@@ -1,0 +1,27 @@
+{
+  "rank": "1.6",
+  "title": "Configure the Microsoft OneDrive rclone remote",
+  "context": "Add a OneDrive remote and upload the encrypted archive to a dedicated app folder.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Configure the Microsoft OneDrive rclone remote",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "rclone remote `onedrive` is configured.",
+      "The destination is private.",
+      "`backup.7z` and `.sha256` upload successfully.",
+      "`rclone check` confirms the remote copy.",
+      "A download and `7z t` succeeds.",
+      "Tokens are mode 600 and outside the repository.",
+      "The runbook records the remote name and folder.",
+      "behavior implemented",
+      "validation command documented",
+      "runbook updated",
+      "restore tested"
+    ]
+  },
+  "attempts": []
+}

@@ -1,0 +1,26 @@
+{
+  "rank": "1.3",
+  "title": "Add remote checksum verification and restore drill",
+  "context": "Verify every cloud copy and perform a restore from at least one provider.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add remote checksum verification and restore drill",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`rclone check` or a remote hash comparison passes.",
+      "The remote `backup.7z.sha256` matches the local file.",
+      "Download the archive to a clean directory.",
+      "`7z t` passes.",
+      "Extract and run `verify-card.sh`.",
+      "Record the drill date, provider, and result.",
+      "Fail the upload command when verification fails.",
+      "behavior implemented",
+      "drill recorded",
+      "runbook updated"
+    ]
+  },
+  "attempts": []
+}

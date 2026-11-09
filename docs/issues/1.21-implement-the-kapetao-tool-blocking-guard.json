@@ -1,0 +1,30 @@
+{
+  "rank": "1.21",
+  "title": "Implement the kapetao tool-blocking guard",
+  "context": "Design and implement an OS-level guard that prevents `gardusi-gustavo` from running agent",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Implement the kapetao tool-blocking guard",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "Agent tooling fails for `gardusi-gustavo`.",
+      "Terminal, sudo, and Chrome still work.",
+      "`gardusi-gustavo-bot` can run the tools.",
+      "A test covers the block.",
+      "The break-glass path is documented.",
+      "Reapplying after an upgrade is documented.",
+      "Inventory agent entrypoints.",
+      "Choose the enforcement point.",
+      "Implement and test.",
+      "Document recovery.",
+      "Add it to the post-upgrade checklist.",
+      "Run each blocked tool as `gardusi-gustavo`: denied.",
+      "Run the same as `gardusi-gustavo-bot`: allowed.",
+      "Browser and sudo still work."
+    ]
+  },
+  "attempts": []
+}

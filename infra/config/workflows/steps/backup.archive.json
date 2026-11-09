@@ -1,0 +1,54 @@
+{
+  "id": "backup.archive",
+  "version": "1.0.0",
+  "kind": "transform",
+  "timeout_seconds": 1800,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/archiveInput",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupArchive",
+  "transition": null,
+  "idempotency": "archive_name + manifest_sha256",
+  "side_effects": [
+    "file.write"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "medium",
+    "network": false
+  },
+  "command": "sb run backup.archive --root . --json",
+  "preconditions": [
+    {
+      "check": "free_floor",
+      "bytes": 10737418240
+    },
+    {
+      "check": "secret_present",
+      "field": "password_file"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "exists",
+      "path": "archive_path"
+    },
+    {
+      "check": "sha256_present",
+      "field": "sha256"
+    }
+  ],
+  "failure_classes": [
+    "no_space",
+    "archive_failed"
+  ],
+  "artifacts": [
+    {
+      "name": "gitea-dump",
+      "path": "$out/*.7z",
+      "retention_class": "backup"
+    }
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "backup.manifest",
+  "version": "1.0.0",
+  "kind": "transform",
+  "timeout_seconds": 120,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/manifestInput",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupManifest",
+  "transition": null,
+  "idempotency": "dump_dir + gitea_version",
+  "side_effects": [
+    "file.write"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.manifest --root . --json",
+  "postconditions": [
+    {
+      "check": "manifest_exists"
+    },
+    {
+      "check": "hash_present"
+    }
+  ],
+  "failure_classes": [
+    "io_error"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

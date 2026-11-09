@@ -1,0 +1,44 @@
+name: backup
+on:
+  workflow_call:
+    inputs:
+      repository:
+        type: string
+        required: true
+      retention:
+        type: number
+        default: 3
+    secrets:
+      BACKUP_PASSPHRASE:
+        required: false
+permissions:
+  contents: read
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create and verify bundle
+        run: |
+          set -euo pipefail
+          mkdir -p bundles
+          name="${GITHUB_REPOSITORY##*/}"
+          git bundle create "bundles/$name.bundle" --all
+          git bundle verify "bundles/$name.bundle"
+          sha256sum bundles/*.bundle > bundles/SHA256SUMS
+          if [[ -n "${BACKUP_PASSPHRASE:-}" ]]; then
+            gpg --batch --yes --symmetric --cipher-algo AES256 \
+              --passphrase "$BACKUP_PASSPHRASE" \
+              --output "bundles/$name.bundle.gpg" "bundles/$name.bundle"
+            rm "bundles/$name.bundle"
+          fi
+        env:
+          BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bundle-${{ github.repository }}-${{ github.run_id }}
+          path: bundles
+          retention-days: ${{ inputs.retention }}

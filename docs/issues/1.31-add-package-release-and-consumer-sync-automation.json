@@ -1,0 +1,36 @@
+{
+  "rank": "1.31",
+  "title": "Add package release and consumer sync automation",
+  "context": "Automatically bump consumers when a package publishes a new version.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add package release and consumer sync automation",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "A new `typescript-dom` release opens bumps for browser consumers.",
+      "A new `python-etl-contracts` release opens bumps for dashboards.",
+      "A new `game-kit` release opens bumps for games.",
+      "A new `go-cli` image release updates the pinned image reference.",
+      "PRs are authored by `gardusi-gustavo-bot` and reviewed/merged by `gardusi-gustavo`.",
+      "Re-running the sync does not duplicate open PRs.",
+      "Consumers with local path dependencies fail the check.",
+      "The job reports missing consumers and version drift.",
+      "The mechanism is documented: Renovate or custom `pkg sync`.",
+      "Choose Renovate self-hosted vs custom `pkg sync`.",
+      "Add the package matrix.",
+      "Add the Gitea token for consumer PRs.",
+      "Add the schedule or release trigger.",
+      "Test with one npm, one PyPI, and one Cargo consumer.",
+      "Add grouping and duplicate detection.",
+      "Link the version policy.",
+      "A dry run lists the consumer PRs without writing.",
+      "A real run opens exactly one PR per consumer update.",
+      "CI passes in the consumer PRs.",
+      "The matrix covers every publisher and consumer."
+    ]
+  },
+  "attempts": []
+}

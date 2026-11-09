@@ -1,0 +1,18 @@
+{
+  "name": "gardusi-gustavo-automation",
+  "permissions": {
+    "contents": "write",
+    "pull_requests": "write",
+    "issues": "write",
+    "metadata": "read",
+    "pages": "write"
+  },
+  "install_on": [
+    "gardusi-gustavo/database",
+    "gardusi-gustavo/dashboard-news",
+    "gardusi-gustavo/dashboard-stocks",
+    "gardusi-gustavo/dashboard-lottery",
+    "gardusi-gustavo/dashboard-wiki"
+  ],
+  "notes": "App tokens are short-lived. The app never approves or merges."
+}

@@ -1,0 +1,27 @@
+{
+  "rank": "1.37",
+  "title": "Add the repo-audit runner and issue-draft output",
+  "context": "Add a scheduled or manual `repo-audit` runner that builds repository context,",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add the repo-audit runner and issue-draft output",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`audit.sh --repo <path> --dry-run` writes a report and drafts; no",
+      "`--check` validates the output schema.",
+      "Roles and models are configurable.",
+      "Maximum 5 drafts per run.",
+      "Dedupe against open issues by title and evidence.",
+      "`--local-only` disables external providers.",
+      "Each draft records model, version, prompt hash, and evidence paths.",
+      "No issue creation and no PR in this issue.",
+      "Fixtures use recorded model outputs; CI makes no live model calls.",
+      "Docs cover cadence, cost, privacy, and review.",
+      "CI is green."
+    ]
+  },
+  "attempts": []
+}

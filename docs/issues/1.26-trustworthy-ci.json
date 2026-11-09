@@ -1,0 +1,28 @@
+{
+  "rank": "1.26",
+  "title": "Trustworthy CI",
+  "context": "<!-- docs-issue:01a16f9d-66e3-751f-a5e9-e3c67f752c33 -->",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "<!-- docs-issue:01a16f9d-66e3-751f-a5e9-e3c67f752c33 -->",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "the CI model stage contract is defined",
+      "shell and jq backup phases pass syntax checks",
+      "shell syntax and shellcheck pass",
+      "retry and backup helpers are tested",
+      "link and policy checks pass",
+      "release/version and tag rules are enforced",
+      "the shared stage contract from `public/templates/docs/issues/issue-01a16f9d-650b-7425-ac8a-cdbe82e61b03.md` is followed",
+      "Confirm the scope and constraints.",
+      "Complete the acceptance criteria.",
+      "Record decisions and evidence in this file.",
+      "`validate-repo.sh` passes",
+      "`validate-issues.sh` passes"
+    ]
+  },
+  "attempts": []
+}

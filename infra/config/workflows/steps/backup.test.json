@@ -1,0 +1,34 @@
+{
+  "id": "backup.test",
+  "version": "1.0.0",
+  "kind": "verify",
+  "timeout_seconds": 600,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/testInput",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupArchive",
+  "transition": null,
+  "idempotency": "archive_sha256",
+  "side_effects": [
+    "file.read"
+  ],
+  "resources": {
+    "io": "heavy",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.test --root . --json",
+  "postconditions": [
+    {
+      "check": "archive_tested"
+    },
+    {
+      "check": "sha256_match"
+    }
+  ],
+  "failure_classes": [
+    "archive_corrupt"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}

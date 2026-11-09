@@ -1,0 +1,25 @@
+{
+  "rank": "2.01",
+  "title": "Investigate backup automation",
+  "context": "<!-- docs-issue:01a16f9d-66bd-759e-a3fa-4abf7a6e77ba -->",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "<!-- docs-issue:01a16f9d-66bd-759e-a3fa-4abf7a6e77ba -->",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "Every plan item has an answer or is explicitly deferred.",
+      "The outcome is linked from the repository docs.",
+      "Derive the backup source manifest from repository configuration where practical.",
+      "Keep the latest-only Gitea dump separate from tag retention.",
+      "Test restore from one public and one private tag archive.",
+      "Confirm that generated `public/` and `.ci-template/` never enter tag archives.",
+      "Record the restore drill and expected checksums.",
+      "`validate-repo.sh` passes",
+      "`validate-issues.sh` passes"
+    ]
+  },
+  "attempts": []
+}

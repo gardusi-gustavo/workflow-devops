@@ -1,0 +1,19 @@
+name: ci-shell
+on:
+  workflow_call:
+    inputs:
+      command:
+        type: string
+        default: >-
+          for f in $(git ls-files '*.sh'); do bash -n "$f"; done
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run
+        run: ${{ inputs.command }}

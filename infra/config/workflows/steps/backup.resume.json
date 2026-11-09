@@ -1,0 +1,38 @@
+{
+  "id": "backup.resume",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 120,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/serviceState",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/serviceState",
+  "transition": null,
+  "idempotency": "service + run_id",
+  "side_effects": [
+    "service.start"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.resume --root . --json",
+  "postconditions": [
+    {
+      "check": "service_state",
+      "value": "running"
+    }
+  ],
+  "failure_classes": [
+    "service_start_failed"
+  ],
+  "retry": {
+    "max_attempts": 1,
+    "on": [
+      "transient"
+    ],
+    "backoff": {
+      "strategy": "fixed",
+      "initial_seconds": 5
+    }
+  }
+}

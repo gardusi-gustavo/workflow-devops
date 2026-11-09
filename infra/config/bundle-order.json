@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "tiers": [
+    {
+      "name": "profile",
+      "repos": [
+        "gardusi-gustavo/gardusi-gustavo"
+      ]
+    },
+    {
+      "name": "contracts",
+      "repos": [
+        "gardusi-gustavo/package-json",
+        "gardusi-gustavo/package-sql",
+        "gardusi-gustavo/package-proto",
+        "gardusi-gustavo/package-graphql"
+      ]
+    },
+    {
+      "name": "tooling",
+      "repos": [
+        "gardusi-gustavo/package-sh",
+        "gardusi-gustavo/package-docker",
+        "gardusi-gustavo/workflow-devops"
+      ]
+    },
+    {
+      "name": "languages",
+      "repos": [
+        "gardusi-gustavo/package-python",
+        "gardusi-gustavo/package-cpp",
+        "gardusi-gustavo/package-ts",
+        "gardusi-gustavo/package-rs",
+        "gardusi-gustavo/package-go",
+        "gardusi-gustavo/package-java",
+        "gardusi-gustavo/package-cs",
+        "gardusi-gustavo/package-php",
+        "gardusi-gustavo/package-rb",
+        "gardusi-gustavo/package-ui"
+      ]
+    },
+    {
+      "name": "data",
+      "repos": [
+        "gardusi-gustavo/database"
+      ]
+    },
+    {
+      "name": "workflows",
+      "repos": [
+        "gardusi-gustavo/workflow-news",
+        "gardusi-gustavo/workflow-stocks",
+        "gardusi-gustavo/workflow-lottery",
+        "gardusi-gustavo/workflow-agent"
+      ]
+    },
+    {
+      "name": "dashboards",
+      "repos": [
+        "gardusi-gustavo/dashboard-news",
+        "gardusi-gustavo/dashboard-stocks",
+        "gardusi-gustavo/dashboard-lottery",
+        "gardusi-gustavo/dashboard-wiki"
+      ]
+    },
+    {
+      "name": "games",
+      "repos": [
+        "gardusi-gustavo/game-sudoku",
+        "gardusi-gustavo/game-logic-grid",
+        "gardusi-gustavo/game-crosswords"
+      ]
+    },
+    {
+      "name": "private",
+      "repos": [
+        "gardusi-gustavo/private"
+      ]
+    }
+  ]
+}

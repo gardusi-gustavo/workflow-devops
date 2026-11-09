@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "repos": [
+    {
+      "group": "gardusi-gustavo",
+      "name": "dashboard-lottery",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/dashboard-lottery.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "dashboard-news",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/dashboard-news.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "dashboard-stocks",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/dashboard-stocks.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "dashboard-wiki",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/dashboard-wiki.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "database",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/database.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "game-crosswords",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/game-crosswords.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "game-logic-grid",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/game-logic-grid.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "game-sudoku",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/game-sudoku.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-cpp",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-cpp.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-cs",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-cs.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-docker",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-docker.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-go",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-go.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-graphql",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-graphql.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-java",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-java.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-json",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-json.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-php",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-php.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-proto",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-proto.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-python",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-python.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-rb",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-rb.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-rs",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-rs.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-sh",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-sh.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-sql",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-sql.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-ts",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-ts.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-ui",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-ui.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "workflow-agent",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/workflow-agent.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "workflow-devops",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/workflow-devops.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "workflow-lottery",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/workflow-lottery.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "workflow-news",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/workflow-news.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "workflow-stocks",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/workflow-stocks.git"
+    },
+    {
+      "group": "human",
+      "name": "private",
+      "git_path": "/srv/gitea/data/git/repositories/human/private.git"
+    }
+  ]
+}

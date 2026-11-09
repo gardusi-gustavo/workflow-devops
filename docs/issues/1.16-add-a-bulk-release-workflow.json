@@ -1,0 +1,25 @@
+{
+  "rank": "1.16",
+  "title": "Add a bulk release workflow",
+  "context": "Release several repositories in one run while keeping one tag per package version.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add a bulk release workflow",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "`release.sh bulk --repo a --repo b` or a manifest file.",
+      "Per-repository preflight before any tag is pushed.",
+      "Stops on the first failure and reports what was released.",
+      "Re-running is idempotent for already released versions.",
+      "Dry-run lists the planned tags.",
+      "Output is machine-readable.",
+      "behavior implemented",
+      "validation command documented",
+      "rollback documented"
+    ]
+  },
+  "attempts": []
+}

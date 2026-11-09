@@ -1,0 +1,38 @@
+{
+  "id": "backup.quiesce",
+  "version": "1.0.0",
+  "kind": "transform",
+  "timeout_seconds": 120,
+  "input_object_schema": "schemas/backup/objects.schema.json#/$defs/serviceRef",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/serviceState",
+  "transition": null,
+  "idempotency": "service + run_id",
+  "side_effects": [
+    "service.stop"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.quiesce --root . --json",
+  "postconditions": [
+    {
+      "check": "service_state",
+      "value": "stopped"
+    }
+  ],
+  "failure_classes": [
+    "service_stop_failed"
+  ],
+  "retry": {
+    "max_attempts": 1,
+    "on": [
+      "transient"
+    ],
+    "backoff": {
+      "strategy": "fixed",
+      "initial_seconds": 5
+    }
+  }
+}

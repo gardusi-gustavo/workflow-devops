@@ -1,0 +1,32 @@
+{
+  "id": "vault.sync",
+  "version": "1.0.0",
+  "title": "Vault sync and reconcile",
+  "trigger": {
+    "manual": true,
+    "schedule": "0 3 * * *",
+    "event": "card.mounted"
+  },
+  "steps": [
+    "vault.scan@1.0.0",
+    "vault.classify@1.0.0",
+    "vault.plan@1.0.0",
+    "vault.reconcile@1.0.0",
+    "vault.render@1.0.0"
+  ],
+  "limits": {
+    "runtime_minutes": 15,
+    "max_items": 5000,
+    "stop_on_item_failure": false,
+    "writes": [
+      "state",
+      "docs"
+    ]
+  },
+  "input_object_schema": "schemas/vault/objects.schema.json#/$defs/scanRequest",
+  "execution": {
+    "default_input": "schemas/vault/objects.schema.json#/$defs/scanRequest",
+    "default_output": "schemas/vault/objects.schema.json#/$defs/runSummary",
+    "concurrency_lock": "vault.sync"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "rank": "1.22",
+  "title": "Purge OpenCode session DB attachments",
+  "context": "Remove the original avatar attachments from the local OpenCode session database",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Purge OpenCode session DB attachments",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "No avatar attachment remains in the session store.",
+      "The database is compacted.",
+      "A post-purge backup contains no copy.",
+      "A check or runbook exists for future attachments.",
+      "The action is recorded without embedding the image.",
+      "Locate the attachment rows and files.",
+      "Back up the database safely.",
+      "Delete and compact.",
+      "Verify with a search.",
+      "Refresh the backup.",
+      "A search for the attachment IDs returns nothing.",
+      "The session still opens.",
+      "The new backup is clean."
+    ]
+  },
+  "attempts": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "vault.ingest",
+  "version": "1.0.0",
+  "title": "Vault ingest and planning",
+  "trigger": {
+    "manual": true,
+    "event": "store.input"
+  },
+  "input_object_schema": "schemas/vault/objects.schema.json#/$defs/scanRequest",
+  "execution": {
+    "default_input": "schemas/vault/objects.schema.json#/$defs/scanRequest",
+    "default_output": "schemas/vault/objects.schema.json#/$defs/reconcileReport",
+    "concurrency_lock": "vault.ingest"
+  },
+  "steps": [
+    "vault.scan@1.0.0",
+    "vault.classify@1.0.0",
+    "vault.plan@1.0.0",
+    "vault.reconcile@1.0.0"
+  ],
+  "limits": {
+    "runtime_minutes": 30,
+    "max_items": 1000,
+    "stop_on_item_failure": false,
+    "writes": [
+      "state",
+      "store"
+    ]
+  }
+}

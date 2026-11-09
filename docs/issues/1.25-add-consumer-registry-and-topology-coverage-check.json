@@ -1,0 +1,27 @@
+{
+  "rank": "1.25",
+  "title": "Add consumer registry and topology coverage check",
+  "context": "Extend the repository registry with layer/dependency metadata and verify coverage",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add consumer registry and topology coverage check",
+    "expected_outcome": "Confirm the migrated scope and acceptance criteria.",
+    "acceptance_criteria": [
+      "Every repository in the manifest appears in the registry/topology.",
+      "Extra registry/topology entries fail the check.",
+      "Layer and dependency data is machine-readable.",
+      "The check reports missing or duplicate repositories.",
+      "Backup/tag verification can use the same registry.",
+      "Choose registry vs topology as the source of truth.",
+      "Add layer/dependency fields.",
+      "Write the coverage check.",
+      "Wire it into the manual backup/tag run.",
+      "Coverage check passes for 22 repositories.",
+      "A temporary missing entry fails the check."
+    ]
+  },
+  "attempts": []
+}

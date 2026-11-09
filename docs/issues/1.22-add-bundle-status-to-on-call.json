@@ -1,0 +1,19 @@
+{
+  "rank": "1.22",
+  "title": "Add bundle status to on-call",
+  "context": "Bundle health needs a single status view.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add bundle counts, sizes, last verify, and last restore to backup status.",
+    "expected_outcome": "On-call can see bundle health without reading directories.",
+    "acceptance_criteria": [
+      "Status includes per-domain totals",
+      "Failed verification is visible",
+      "Mirror parity is visible"
+    ]
+  },
+  "attempts": []
+}

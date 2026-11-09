@@ -1,0 +1,38 @@
+{
+  "id": "backup.preflight",
+  "version": "1.0.0",
+  "kind": "control",
+  "timeout_seconds": 300,
+  "input_object_schema": "schemas/backup/backup-policy.schema.json",
+  "output_object_schema": "schemas/backup/objects.schema.json#/$defs/backupPlan",
+  "transition": null,
+  "idempotency": "policy_sha256 + destination_set",
+  "side_effects": [
+    "state.read"
+  ],
+  "resources": {
+    "io": "light",
+    "cpu": "low",
+    "network": false
+  },
+  "command": "sb run backup.preflight --root . --json",
+  "preconditions": [
+    {
+      "check": "policy_valid"
+    }
+  ],
+  "postconditions": [
+    {
+      "check": "destinations_have_space"
+    }
+  ],
+  "failure_classes": [
+    "invalid_policy",
+    "missing_destination",
+    "no_space"
+  ],
+  "retry": {
+    "max_attempts": 0,
+    "on": []
+  }
+}
