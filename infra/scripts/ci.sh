@@ -6,6 +6,7 @@ cd "$ROOT"
 
 "$ROOT/infra/scripts/ci/validate-repo.sh" --root "$ROOT"
 "$ROOT/infra/scripts/ci/check-size.sh" --root "$ROOT"
+"$ROOT/infra/scripts/ci/validate-local-issues.sh" --root "$ROOT"
 
 while IFS= read -r f; do bash -n "$f"; done < <(git ls-files '*.sh')
 while IFS= read -r f; do python3 -m py_compile "$f"; done < <(git ls-files '*.py')
