@@ -661,6 +661,42 @@
       ],
       "pending": [],
       "reason": "Retired after migration manifest completion. Previous status: dropped. Superseded by devops reusable GitHub workflows."
+    },
+    {
+      "source": "gardusi-gustavo/devops",
+      "source_head": "a9763824e8fc8b98604d810dffba699f5b9d2330",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/package-sh",
+        "gardusi-gustavo/package-docker",
+        "gardusi-gustavo/workflow-devops"
+      ],
+      "tracked_files": 281,
+      "mapping": [
+        {
+          "from": "infra/scripts/backup/bundle-*",
+          "target": "gardusi-gustavo/package-sh",
+          "to": "infra/scripts/backup/"
+        },
+        {
+          "from": "infra/docker/",
+          "target": "gardusi-gustavo/package-docker",
+          "to": "infra/docker/"
+        },
+        {
+          "from": "infra/scripts/runtime/",
+          "target": "gardusi-gustavo/package-docker",
+          "to": "infra/scripts/runtime/"
+        },
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/workflow-devops",
+          "to": "*"
+        }
+      ],
+      "dropped": [],
+      "pending": [],
+      "reason": "Split into package-sh (portable scripts and bundle primitives), package-docker (images and runtime installers), and workflow-devops (workflows, policy, backup orchestration, and agent control). Callers migrated to workflow-devops@v0.1.0; metadata exported before retirement."
     }
   ]
 }
