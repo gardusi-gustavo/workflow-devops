@@ -14,11 +14,20 @@ secrets. Rulesets are applied per repository.
 | `workflow-devops` | reusable workflows, policy, backups, bootstrap |
 | `package-python` | PyPI `gardusi-gustavo-python` |
 | `package-cpp` | C++ CMake package |
-| `package-sh` | pinned-tag shell package |
+| `package-sh` | pinned-tag shell package and bundle primitives |
+| `package-docker` | Dockerfiles, CI images, runtime installers |
 | `workflow-*` | ingestion orchestrators |
 | `dashboard-*` | static GitHub Pages sites |
 | `game-*` | games |
 | `private` | private vault; never mirrored |
+
+## Token scope
+
+Pushing `.github/workflows/` requires the `workflow` scope:
+
+```bash
+gh auth refresh -h github.com -s workflow
+```
 
 ## Rulesets
 
