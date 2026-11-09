@@ -29,7 +29,7 @@ uses: gardusi-gustavo/workflow-devops/.github/workflows/<workflow>.yml@v0.1.0
 
 | Repository | Tag |
 | --- | --- |
-| `package-sh` | `v0.7.1` |
+| `package-sh` | `v0.7.2` |
 | `package-docker` | `v0.1.0` |
 | `workflow-devops` | `v0.1.0` |
 
