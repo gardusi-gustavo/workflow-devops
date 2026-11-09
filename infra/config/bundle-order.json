@@ -2,9 +2,10 @@
   "schema": 1,
   "tiers": [
     {
-      "name": "profile",
+      "name": "meta",
       "repos": [
-        "gardusi-gustavo/gardusi-gustavo"
+        "gardusi-gustavo/gardusi-gustavo",
+        "gardusi-gustavo/.github"
       ]
     },
     {

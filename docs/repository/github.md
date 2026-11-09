@@ -10,6 +10,7 @@ secrets. Rulesets are applied per repository.
 
 | Repository | Role |
 | --- | --- |
+| `.github` | account-wide community health defaults |
 | `database` | public raw data lake |
 | `workflow-devops` | reusable workflows, policy, backups, bootstrap |
 | `package-python` | PyPI `gardusi-gustavo-python` |

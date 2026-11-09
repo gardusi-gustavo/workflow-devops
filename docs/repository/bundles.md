@@ -60,7 +60,7 @@ written to a temporary path, verified, then atomically renamed.
 `infra/config/bundle-order.json` defines the order:
 
 ```text
-profile → contracts → tooling → languages → data → workflows → dashboards → games → private
+meta (profile + .github) → contracts → tooling → languages → data → workflows → dashboards → games → private
 ```
 
 Run all, or a test subset:
