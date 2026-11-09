@@ -10,10 +10,10 @@
     {
       "name": "contracts",
       "repos": [
-        "gardusi-gustavo/package-json",
-        "gardusi-gustavo/package-sql",
-        "gardusi-gustavo/package-proto",
-        "gardusi-gustavo/package-graphql"
+        "gardusi-gustavo/contract-json",
+        "gardusi-gustavo/contract-sql",
+        "gardusi-gustavo/contract-proto",
+        "gardusi-gustavo/contract-graphql"
       ]
     },
     {

@@ -488,7 +488,7 @@
       "source_head": "ba9f09c207f2f2475cb0e7169e447ac2ac6b9e48",
       "status": "deleted",
       "targets": [
-        "gardusi-gustavo/package-json",
+        "gardusi-gustavo/contract-json",
         "gardusi-gustavo/devops",
         "human/private"
       ],
@@ -496,7 +496,7 @@
       "mapping": [
         {
           "from": "schemas/",
-          "target": "gardusi-gustavo/package-json",
+          "target": "gardusi-gustavo/contract-json",
           "to": "schemas/infra/templates/"
         },
         {
@@ -521,7 +521,7 @@
         ".gitea/"
       ],
       "pending": [],
-      "reason": "Retired after migration manifest completion. Previous status: split. Schemas to package-json; workflow configs to devops; vault state to human/private."
+      "reason": "Retired after migration manifest completion. Previous status: split. Schemas to contract-json; workflow configs to devops; vault state to human/private."
     },
     {
       "source": "templates/md",

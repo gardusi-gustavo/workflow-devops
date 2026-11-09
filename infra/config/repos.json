@@ -63,8 +63,8 @@
     },
     {
       "group": "gardusi-gustavo",
-      "name": "package-graphql",
-      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-graphql.git"
+      "name": "contract-graphql",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-graphql.git"
     },
     {
       "group": "gardusi-gustavo",
@@ -73,8 +73,8 @@
     },
     {
       "group": "gardusi-gustavo",
-      "name": "package-json",
-      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-json.git"
+      "name": "contract-json",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-json.git"
     },
     {
       "group": "gardusi-gustavo",
@@ -83,8 +83,8 @@
     },
     {
       "group": "gardusi-gustavo",
-      "name": "package-proto",
-      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-proto.git"
+      "name": "contract-proto",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-proto.git"
     },
     {
       "group": "gardusi-gustavo",
@@ -108,8 +108,8 @@
     },
     {
       "group": "gardusi-gustavo",
-      "name": "package-sql",
-      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-sql.git"
+      "name": "contract-sql",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-sql.git"
     },
     {
       "group": "gardusi-gustavo",

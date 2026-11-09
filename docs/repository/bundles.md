@@ -40,11 +40,11 @@ Gitea dump remains the cold fallback until that export is verified.
 BIN=~/repos/gardusi-gustavo/package-sh/infra/scripts/backup
 
 # One repository from a local bare clone
-"$BIN/bundle-backup.sh" gardusi-gustavo/package-json \
-  --source /srv/gitea/data/git/repositories/gardusi-gustavo/package-json.git
+"$BIN/bundle-backup.sh" gardusi-gustavo/contract-json \
+  --source /srv/gitea/data/git/repositories/gardusi-gustavo/contract-json.git
 
 # One repository from GitHub
-"$BIN/bundle-backup.sh" gardusi-gustavo/package-json
+"$BIN/bundle-backup.sh" gardusi-gustavo/contract-json
 
 # Encrypted private repository
 "$BIN/bundle-backup.sh" gardusi-gustavo/private \
@@ -85,7 +85,7 @@ file and verified.
 ## Restore drill
 
 ```bash
-~/repos/gardusi-gustavo/package-sh/infra/scripts/backup/bundle-restore-test.sh gardusi-gustavo/package-json \
+~/repos/gardusi-gustavo/package-sh/infra/scripts/backup/bundle-restore-test.sh gardusi-gustavo/contract-json \
   --root /srv/backup/git-bundles \
   --out /tmp/restore-test \
   --status-file /srv/backup/status/bundle-restore-latest.json
