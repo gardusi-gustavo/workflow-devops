@@ -3,6 +3,26 @@
   "repos": [
     {
       "group": "gardusi-gustavo",
+      "name": "contract-graphql",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-graphql.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "contract-json",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-json.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "contract-proto",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-proto.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "contract-sql",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-sql.git"
+    },
+    {
+      "group": "gardusi-gustavo",
       "name": "dashboard-lottery",
       "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/dashboard-lottery.git"
     },
@@ -43,6 +63,11 @@
     },
     {
       "group": "gardusi-gustavo",
+      "name": "package-cdk",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-cdk.git"
+    },
+    {
+      "group": "gardusi-gustavo",
       "name": "package-cpp",
       "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-cpp.git"
     },
@@ -58,13 +83,13 @@
     },
     {
       "group": "gardusi-gustavo",
-      "name": "package-go",
-      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-go.git"
+      "name": "package-elixir",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-elixir.git"
     },
     {
       "group": "gardusi-gustavo",
-      "name": "contract-graphql",
-      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-graphql.git"
+      "name": "package-go",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-go.git"
     },
     {
       "group": "gardusi-gustavo",
@@ -73,18 +98,13 @@
     },
     {
       "group": "gardusi-gustavo",
-      "name": "contract-json",
-      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-json.git"
+      "name": "package-kotlin",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-kotlin.git"
     },
     {
       "group": "gardusi-gustavo",
       "name": "package-php",
       "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-php.git"
-    },
-    {
-      "group": "gardusi-gustavo",
-      "name": "contract-proto",
-      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-proto.git"
     },
     {
       "group": "gardusi-gustavo",
@@ -108,8 +128,13 @@
     },
     {
       "group": "gardusi-gustavo",
-      "name": "contract-sql",
-      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/contract-sql.git"
+      "name": "package-swift",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-swift.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-terraform",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-terraform.git"
     },
     {
       "group": "gardusi-gustavo",
@@ -120,6 +145,11 @@
       "group": "gardusi-gustavo",
       "name": "package-ui",
       "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-ui.git"
+    },
+    {
+      "group": "gardusi-gustavo",
+      "name": "package-zig",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/package-zig.git"
     },
     {
       "group": "gardusi-gustavo",

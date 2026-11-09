@@ -37,7 +37,13 @@
         "gardusi-gustavo/package-cs",
         "gardusi-gustavo/package-php",
         "gardusi-gustavo/package-rb",
-        "gardusi-gustavo/package-ui"
+        "gardusi-gustavo/package-ui",
+        "gardusi-gustavo/package-kotlin",
+        "gardusi-gustavo/package-terraform",
+        "gardusi-gustavo/package-cdk",
+        "gardusi-gustavo/package-elixir",
+        "gardusi-gustavo/package-zig",
+        "gardusi-gustavo/package-swift"
       ]
     },
     {
