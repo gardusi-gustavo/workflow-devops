@@ -1,0 +1,20 @@
+{
+  "rank": "1.38",
+  "title": "Add reusable CI workflows for new runtimes",
+  "context": "Kotlin, Terraform, CDK, Elixir, Zig, and Swift packages currently use self-contained CI workflows. Reusable workflows in workflow-devops should own the shared setup and checks.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Add reusable CI workflows for the new language and infrastructure runtimes, then point consumers at them.",
+    "expected_outcome": "Every new package calls a workflow-devops reusable workflow instead of duplicating setup.",
+    "acceptance_criteria": [
+      "Java/Kotlin, Terraform, Elixir, Zig, and Swift have reusable workflows or a documented shared container path",
+      "CDK uses the shared Node workflow where possible",
+      "Consumers pin the new workflow tag",
+      "Self-contained setup is removed or documented as a temporary exception"
+    ]
+  },
+  "attempts": []
+}
