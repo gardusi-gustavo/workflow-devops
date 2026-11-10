@@ -1,0 +1,20 @@
+{
+  "rank": "1.39",
+  "title": "Remove the legacy governance copy from workflow-event",
+  "context": "`.github/governance` is now the canonical home for inventory, policy, bundle order, orgs, backup policy, rulesets, App manifest, and archive history. workflow-event still carries duplicate copies under infra/config.",
+  "limits": {
+    "max_commits": 5,
+    "max_file_changes": 4
+  },
+  "spec": {
+    "summary": "Point workflow-event scripts at a pinned .github governance checkout and remove the duplicate config tree.",
+    "expected_outcome": "workflow-event has one governance source: .github/governance at a pinned tag.",
+    "acceptance_criteria": [
+      "Scripts read GOVERNANCE_DIR or a pinned .github checkout",
+      "Duplicate repos.json, policy.json, bundle-order.json, orgs.json, backup-policy.json, and archive-migration.json are removed",
+      "CI checks out .github at the pinned governance tag",
+      "Archive verification and inventory checks still pass"
+    ]
+  },
+  "attempts": []
+}
