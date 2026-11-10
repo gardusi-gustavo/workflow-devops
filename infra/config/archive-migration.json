@@ -697,6 +697,123 @@
       "dropped": [],
       "pending": [],
       "reason": "Split into package-sh (portable scripts and bundle primitives), package-docker (images and runtime installers), and workflow-event (workflows, policy, backup orchestration, and agent control). Callers migrated to workflow-event@v0.1.0; metadata exported before retirement."
+    },
+    {
+      "source": "gardusi-gustavo/workflow-news",
+      "source_head": "d53e364e81bf61a29a460f15fafa93f677d9f5cc",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/workflow-scheduled",
+        "gardusi-gustavo/database-news"
+      ],
+      "tracked_files": 48,
+      "mapping": [
+        {
+          "from": "src/news/",
+          "target": "gardusi-gustavo/workflow-scheduled",
+          "to": "tasks/news/"
+        },
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/database-news",
+          "to": "data/news/"
+        }
+      ],
+      "dropped": [],
+      "pending": [],
+      "reason": "Merged into workflow-scheduled tasks and database-news datasets; retired after bundle verification and restore drill."
+    },
+    {
+      "source": "gardusi-gustavo/workflow-stocks",
+      "source_head": "e4d1f9d54af13f825d9804db93b76d767b844c19",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/workflow-scheduled",
+        "gardusi-gustavo/database-stocks"
+      ],
+      "tracked_files": 48,
+      "mapping": [
+        {
+          "from": "src/stocks/",
+          "target": "gardusi-gustavo/workflow-scheduled",
+          "to": "tasks/stocks/"
+        },
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/database-stocks",
+          "to": "data/stocks/"
+        }
+      ],
+      "dropped": [],
+      "pending": [],
+      "reason": "Merged into workflow-scheduled tasks and database-stocks datasets; retired after bundle verification and restore drill."
+    },
+    {
+      "source": "gardusi-gustavo/workflow-lottery",
+      "source_head": "15ac23d67bc6c0967da79782e72531fc6ec89dd0",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/workflow-scheduled",
+        "gardusi-gustavo/database-lottery"
+      ],
+      "tracked_files": 48,
+      "mapping": [
+        {
+          "from": "src/lottery/",
+          "target": "gardusi-gustavo/workflow-scheduled",
+          "to": "tasks/lottery/"
+        },
+        {
+          "from": "*",
+          "target": "gardusi-gustavo/database-lottery",
+          "to": "data/lottery/"
+        }
+      ],
+      "dropped": [],
+      "pending": [],
+      "reason": "Merged into workflow-scheduled tasks and database-lottery datasets; retired after bundle verification and restore drill."
+    },
+    {
+      "source": "gardusi-gustavo/database",
+      "source_head": "dc4e7b4a0c80c31a51ffceee03b2e78cec125110",
+      "status": "deleted",
+      "targets": [
+        "gardusi-gustavo/database-lottery",
+        "gardusi-gustavo/database-news",
+        "gardusi-gustavo/database-stocks",
+        "gardusi-gustavo/dashboard-wiki"
+      ],
+      "tracked_files": 75,
+      "mapping": [
+        {
+          "from": "data/lottery/",
+          "target": "gardusi-gustavo/database-lottery",
+          "to": "data/lottery/"
+        },
+        {
+          "from": "data/news/",
+          "target": "gardusi-gustavo/database-news",
+          "to": "data/news/"
+        },
+        {
+          "from": "data/stocks/",
+          "target": "gardusi-gustavo/database-stocks",
+          "to": "data/stocks/"
+        },
+        {
+          "from": "data/playlists/",
+          "target": "gardusi-gustavo/dashboard-wiki",
+          "to": "src/data/playlists/"
+        },
+        {
+          "from": "schemas/database/",
+          "target": "gardusi-gustavo/database-lottery",
+          "to": "schemas/"
+        }
+      ],
+      "dropped": [],
+      "pending": [],
+      "reason": "Split into database-lottery, database-news, and database-stocks; playlists moved to dashboard-wiki. Retired after bundle verification and restore drill."
     }
   ]
 }
