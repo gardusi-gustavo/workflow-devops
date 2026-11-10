@@ -69,7 +69,7 @@ A degraded manual backup is not reported as complete. It records
 ## Generate
 
 ```bash
-cd /home/user/repos/gardusi-gustavo/workflow-devops
+cd /home/user/repos/gardusi-gustavo/workflow-event
 sudo ./infra/scripts/backup/make.sh
 ```
 

@@ -16,8 +16,8 @@
 
 ## Channels
 
-- Gitea issue in `gardusi-gustavo/workflow-devops`
-- `gardusi-gustavo/workflow-devops` issue for backup or release problems
+- Gitea issue in `gardusi-gustavo/workflow-event`
+- `gardusi-gustavo/workflow-event` issue for backup or release problems
 - `private/records` for credential or account recovery
 
 Do not put secrets in an issue, chat, or commit.

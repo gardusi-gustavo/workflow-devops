@@ -22,7 +22,7 @@
       "repos": [
         "gardusi-gustavo/package-sh",
         "gardusi-gustavo/package-docker",
-        "gardusi-gustavo/workflow-devops"
+        "gardusi-gustavo/workflow-event"
       ]
     },
     {

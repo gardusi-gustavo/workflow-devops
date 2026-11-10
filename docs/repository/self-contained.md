@@ -5,11 +5,11 @@ recoverable, and copyable without Gitea.
 
 ## Source of truth
 
-- Repository: `gardusi-gustavo/workflow-devops`
+- Repository: `gardusi-gustavo/workflow-event`
 - Visibility: public
 - Owner: `human`
 - Git platform: Gitea
-- Local checkout: `~/repos/gardusi-gustavo/workflow-devops`
+- Local checkout: `~/repos/gardusi-gustavo/workflow-event`
 
 ## Durable data
 

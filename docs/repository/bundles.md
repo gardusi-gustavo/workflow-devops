@@ -67,7 +67,7 @@ Run all, or a test subset:
 
 ```bash
 BIN=~/repos/gardusi-gustavo/package-sh/infra/scripts/backup
-ORDER=~/repos/gardusi-gustavo/workflow-devops/infra/config/bundle-order.json
+ORDER=~/repos/gardusi-gustavo/workflow-event/infra/config/bundle-order.json
 "$BIN/bundle-all.sh" --order "$ORDER"
 "$BIN/bundle-all.sh" --order "$ORDER" --dry-run --only gardusi-gustavo/gardusi-gustavo
 ```
@@ -116,5 +116,5 @@ destination. The copy is checksum-verified after `rsync`.
 ## Script location
 
 The generic bundle primitives live in `package-sh` under
-`infra/scripts/backup/`. `workflow-devops` owns the order file and backup policy.
+`infra/scripts/backup/`. `workflow-event` owns the order file and backup policy.
 Run `package-sh/infra/scripts/backup/bundle-all.sh --order infra/config/bundle-order.json`.

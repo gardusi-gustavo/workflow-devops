@@ -28,9 +28,9 @@
 
 ## 🗂️ Issues
 
-Active work lives in [Gitea issues](http://gitea.localhost:3001/gardusi-gustavo/workflow-devops/issues).
+Active work lives in [Gitea issues](http://gitea.localhost:3001/gardusi-gustavo/workflow-event/issues).
 Use the labels and issue workflow in
-[`AGENTS.md`](http://gitea.localhost:3001/gardusi-gustavo/workflow-devops/src/branch/main/AGENTS.md).
+[`AGENTS.md`](http://gitea.localhost:3001/gardusi-gustavo/workflow-event/src/branch/main/AGENTS.md).
 
 - [GitHub App](runbooks/github-app.md)
 - [Gitea retirement](runbooks/gitea-retirement.md)

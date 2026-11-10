@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "name": "workflow-devops",
+  "name": "workflow-event",
   "organization": "gardusi-gustavo",
   "layer": 1,
   "kind": "tooling",

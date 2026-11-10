@@ -1,7 +1,7 @@
 # Repository bootstrap
 
 Status: **staged locally**. GitHub-side rulesets and secret scanning are applied
-by `workflow-devops/infra/scripts/github/bootstrap.sh` after the mirror exists.
+by `workflow-event/infra/scripts/github/bootstrap.sh` after the mirror exists.
 
 ## Baseline
 
@@ -22,7 +22,7 @@ See `infra/config/bootstrap.json`.
 
 ```json
 {
-  "repository": "gardusi-gustavo/workflow-devops",
+  "repository": "gardusi-gustavo/workflow-event",
   "default_branch": "main",
   "required_approvals": 1,
   "squash_merge": true,

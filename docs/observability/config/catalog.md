@@ -7,7 +7,7 @@ stack. Store references and sanitized settings, never secrets.
 | --- | --- | --- | --- |
 | Gitea `app.ini` | host | `/srv/gitea/data/gitea/conf/app.ini` | [reference](http://gitea.localhost:3001/private/wiki/src/branch/main/docs/reference/infra/gitea.md) |
 | Runner `config.yml` | host | `/srv/gitea/runner/config.yml` | [reference](http://gitea.localhost:3001/private/wiki/src/branch/main/docs/reference/infra/gitea.md) |
-| Repository registry | `gardusi-gustavo/workflow-devops/infra/config/repos.json` | `/srv/backup/tooling/repos.json` | link |
+| Repository registry | `gardusi-gustavo/workflow-event/infra/config/repos.json` | `/srv/backup/tooling/repos.json` | link |
 | Backup manifest | host | `/srv/backup/repos.tsv` | link |
 | Static telemetry | `src/observability/collect.py` | collector job | review |
 
@@ -17,5 +17,5 @@ stack. Store references and sanitized settings, never secrets.
 - Host-only configs get a sanitized reference, not a raw copy.
 - Runtime copies must match the source of truth after a deploy.
 - A config change that affects behavior needs a Gitea issue.
-- The workflow-devops repo owns telemetry collection, the static page, and on-call docs.
+- The workflow-event repo owns telemetry collection, the static page, and on-call docs.
 - Gitea owns repositories, issues, users, and rules.

@@ -5,7 +5,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 POLICY="${GITEA_PR_POLICY:-$SCRIPT_DIR/../../config/policy.json}"
 if [[ ! -s "$POLICY" ]]; then
-  for candidate in /srv/agent/config/policy.json "$HOME/repos/gardusi-gustavo/workflow-devops/infra/config/policy.json" /home/user/repos/gardusi-gustavo/workflow-devops/infra/config/policy.json; do
+  for candidate in /srv/agent/config/policy.json "$HOME/repos/gardusi-gustavo/workflow-event/infra/config/policy.json" /home/user/repos/gardusi-gustavo/workflow-event/infra/config/policy.json; do
     [[ -s "$candidate" ]] && { POLICY="$candidate"; break; }
   done
 fi

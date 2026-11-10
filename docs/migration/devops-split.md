@@ -9,7 +9,7 @@ content, and maintenance orchestration no longer share one control plane.
 | --- | --- |
 | `package-sh` | portable shell scripts, CI validators, and bundle primitives |
 | `package-docker` | Dockerfiles, CI images, runtime installers, and image build helpers |
-| `workflow-devops` | reusable workflows, policy, inventory, backup orchestration, agent control, and runbooks |
+| `workflow-event` | reusable workflows, policy, inventory, backup orchestration, agent control, and runbooks |
 
 ## Caller migration
 
@@ -22,7 +22,7 @@ uses: gardusi-gustavo/devops/.github/workflows/<workflow>.yml@v0.1.0
 to:
 
 ```yaml
-uses: gardusi-gustavo/workflow-devops/.github/workflows/<workflow>.yml@v0.1.0
+uses: gardusi-gustavo/workflow-event/.github/workflows/<workflow>.yml@v0.1.0
 ```
 
 ## Tags
@@ -31,7 +31,7 @@ uses: gardusi-gustavo/workflow-devops/.github/workflows/<workflow>.yml@v0.1.0
 | --- | --- |
 | `package-sh` | `v0.7.3` |
 | `package-docker` | `v0.1.0` |
-| `workflow-devops` | `v0.1.0` |
+| `workflow-event` | `v0.1.0` |
 
 ## Metadata
 
@@ -42,4 +42,4 @@ bundle backup. The archive manifest records the split as `deleted`.
 ## Rule
 
 Do not recreate `devops`. Portable code goes to `package-sh`, image content to
-`package-docker`, and maintenance orchestration to `workflow-devops`.
+`package-docker`, and maintenance orchestration to `workflow-event`.

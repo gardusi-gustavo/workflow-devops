@@ -7,7 +7,7 @@
 - [ ] backup age is under 48h
 - [ ] disk is above 15% free
 - [ ] Prometheus targets are up
-- [ ] the last deploy manifest matches `gardusi-gustavo/workflow-devops`
+- [ ] the last deploy manifest matches `gardusi-gustavo/workflow-event`
 - [ ] pending changes are listed
 
 ## Handoff note

@@ -5,7 +5,7 @@
 ## Durable inputs
 
 - Gitea dump and repository archives on the microSD.
-- `gardusi-gustavo/workflow-devops` in Git, including committed JSONL telemetry rows.
+- `gardusi-gustavo/workflow-event` in Git, including committed JSONL telemetry rows.
 - Secrets are **not** durable; regenerate them.
 
 ## 1. Restore Gitea

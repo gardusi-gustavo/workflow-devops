@@ -193,7 +193,7 @@
     "gardusi-gustavo/package-ui",
     "gardusi-gustavo/package-zig",
     "gardusi-gustavo/workflow-agent",
-    "gardusi-gustavo/workflow-devops",
+    "gardusi-gustavo/workflow-event",
     "gardusi-gustavo/workflow-lottery",
     "gardusi-gustavo/workflow-news",
     "gardusi-gustavo/workflow-stocks"

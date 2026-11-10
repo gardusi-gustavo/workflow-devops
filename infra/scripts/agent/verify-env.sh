@@ -42,7 +42,7 @@ if [[ -f "$ENVFILE" ]]; then
   source "$ENVFILE"
 fi
 if [[ -n "${GITEA_TOKEN:-}" ]]; then
-  check "Gitea API read" curl -fsS -H "Authorization: token $GITEA_TOKEN" "${GITEA_URL:-http://127.0.0.1:3001}/api/v1/repos/gardusi-gustavo/workflow-devops/issues?state=open&limit=1"
+  check "Gitea API read" curl -fsS -H "Authorization: token $GITEA_TOKEN" "${GITEA_URL:-http://127.0.0.1:3001}/api/v1/repos/gardusi-gustavo/workflow-event/issues?state=open&limit=1"
   login="$(curl -fsS -H "Authorization: token $GITEA_TOKEN" "${GITEA_URL:-http://127.0.0.1:3001}/api/v1/user" | jq -r '.login // empty')"
   [[ "$login" == "bot-event" ]] && ok "Gitea token identity: bot-event" || fail "Gitea token identity: ${login:-unknown}"
 else
@@ -70,7 +70,7 @@ if [[ -r "$HOME/.config/git/hooks/pre-push" ]]; then
 fi
 deny "read human token" test -r /home/user/.config/gitea/env
 
-check "Gitea SSH" timeout 20 git ls-remote ssh://git@gitea.localhost:2225/gardusi-gustavo/workflow-devops.git HEAD
+check "Gitea SSH" timeout 20 git ls-remote ssh://git@gitea.localhost:2225/gardusi-gustavo/workflow-event.git HEAD
 
 if [[ "${VERIFY_PR:-0}" == "1" ]]; then
   echo "PR creation: use the Gitea API with $GITEA_TOKEN and a scratch branch"

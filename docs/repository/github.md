@@ -12,7 +12,7 @@ secrets. Rulesets are applied per repository.
 | --- | --- |
 | `.github` | account-wide community health defaults |
 | `database` | public raw data lake |
-| `workflow-devops` | reusable workflows, policy, backups, bootstrap |
+| `workflow-event` | reusable workflows, policy, backups, bootstrap |
 | `package-python` | PyPI `gardusi-gustavo-python` |
 | `package-cpp` | C++ CMake package |
 | `package-sh` | pinned-tag shell package and bundle primitives |

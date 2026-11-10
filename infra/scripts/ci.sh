@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Validate the workflow-devops control plane.
+# Validate the workflow-event control plane.
 set -euo pipefail
 ROOT="${CI_PROJECT_DIR:-$(git rev-parse --show-toplevel)}"
 cd "$ROOT"
@@ -21,4 +21,4 @@ while IFS= read -r f; do jq empty "$f" >/dev/null; done < <(git ls-files 'infra/
 "$ROOT/infra/scripts/backup/test-verify-dump.sh"
 "$ROOT/infra/scripts/archive/verify-migration.sh" --root "$ROOT"
 PYTHONPATH="$ROOT/src" python3 -m unittest discover -s "$ROOT/src/tests" -t "$ROOT/src" -q
-echo "workflow-devops checks ok"
+echo "workflow-event checks ok"

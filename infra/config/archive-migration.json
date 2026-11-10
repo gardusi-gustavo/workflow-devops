@@ -669,7 +669,7 @@
       "targets": [
         "gardusi-gustavo/package-sh",
         "gardusi-gustavo/package-docker",
-        "gardusi-gustavo/workflow-devops"
+        "gardusi-gustavo/workflow-event"
       ],
       "tracked_files": 281,
       "mapping": [
@@ -690,13 +690,13 @@
         },
         {
           "from": "*",
-          "target": "gardusi-gustavo/workflow-devops",
+          "target": "gardusi-gustavo/workflow-event",
           "to": "*"
         }
       ],
       "dropped": [],
       "pending": [],
-      "reason": "Split into package-sh (portable scripts and bundle primitives), package-docker (images and runtime installers), and workflow-devops (workflows, policy, backup orchestration, and agent control). Callers migrated to workflow-devops@v0.1.0; metadata exported before retirement."
+      "reason": "Split into package-sh (portable scripts and bundle primitives), package-docker (images and runtime installers), and workflow-event (workflows, policy, backup orchestration, and agent control). Callers migrated to workflow-event@v0.1.0; metadata exported before retirement."
     }
   ]
 }

@@ -158,8 +158,8 @@
     },
     {
       "group": "gardusi-gustavo",
-      "name": "workflow-devops",
-      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/workflow-devops.git"
+      "name": "workflow-event",
+      "git_path": "/srv/gitea/data/git/repositories/gardusi-gustavo/workflow-event.git"
     },
     {
       "group": "gardusi-gustavo",

@@ -1,4 +1,4 @@
-# workflow-devops
+# workflow-event
 
 Maintenance workflows, repository policy, inventory, GitHub App manifests,
 backup orchestration, and operational runbooks.

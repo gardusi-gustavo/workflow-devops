@@ -1,11 +1,11 @@
 {
   "name": "gardusi-gustavo-automation",
-  "url": "https://github.com/gardusi-gustavo/workflow-devops",
+  "url": "https://github.com/gardusi-gustavo/workflow-event",
   "hook_attributes": {
-    "url": "https://github.com/gardusi-gustavo/workflow-devops",
+    "url": "https://github.com/gardusi-gustavo/workflow-event",
     "active": false
   },
-  "redirect_url": "https://github.com/gardusi-gustavo/workflow-devops",
+  "redirect_url": "https://github.com/gardusi-gustavo/workflow-event",
   "public": false,
   "default_permissions": {
     "contents": "write",

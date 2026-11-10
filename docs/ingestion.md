@@ -16,7 +16,7 @@ One rolling branch per domain: `data/<domain>`.
 
 ## Workflows
 
-- `workflow-devops/.github/workflows/ingest.yml` is reusable.
+- `workflow-event/.github/workflows/ingest.yml` is reusable.
 - Each `workflow-*` repository has a caller on a schedule and on demand.
 - The app token has `contents: write` on `database` and the affected dashboard.
 - The app never approves or merges.
